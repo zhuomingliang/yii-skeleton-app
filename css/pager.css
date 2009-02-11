@@ -1,0 +1,51 @@
+.pager {
+	margin:10px 0;
+}
+.pager ul {
+	font-size:11px;
+	border:0;
+	margin:0;
+	padding:0;
+	line-height:100%;
+	display:inline;
+}
+
+.pager ul li {
+	display:inline;
+}
+
+.pager ul a:link,
+.pager ul a:visited {
+	border:solid 1px #9aafe5;
+	font-weight:bold;
+	color:#0e509e;
+	padding:1px 6px;
+	text-decoration:none;
+}
+
+.pager ul .page a {
+	font-weight:normal;
+}
+
+.pager ul a:hover {
+	border:solid 1px #0e509e;
+}
+
+.pager ul .selected a {
+	background:#2e6ab1;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.pager ul .hidden a {
+	border:solid 1px #DEDEDE;
+	color:#888888;
+}
+
+/**
+ * Hide first and last buttons by default.
+ */
+.pager ul .first,
+.pager ul .last {
+	display:none;
+}

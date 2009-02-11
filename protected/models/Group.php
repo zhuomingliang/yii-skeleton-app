@@ -1,0 +1,29 @@
+<?php
+
+class Group extends CActiveRecord
+{
+	//user rankings
+	//possibly should be moved to the WebUser class?
+	const GUEST=1;
+	const USER=2;
+	const ADMIN=3;
+	const SITE_ADMIN=4;
+	/**
+	 * Returns the static model of the specified AR class.
+	 * This method is required by all child classes of CActiveRecord.
+	 * @return CActiveRecord the static model class
+	 */
+	public static function model($className=__CLASS__) {
+		return parent::model($className);
+	}
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules() {
+		return array(
+			array('name','length','max'=>50),
+			array('name, created, modified', 'required'),
+		);
+	}
+
+}
