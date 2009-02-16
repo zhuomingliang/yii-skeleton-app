@@ -27,7 +27,7 @@ class LogableBehavior extends CActiveRecordBehavior {
 					continue;
 				
 				if ($new != $old) {
-					echo $name . ' ('.$old.') => ('.$new.'), ';
+					//echo $name . ' ('.$old.') => ('.$new.'), ';
 
 					$log=new ActiveRecordLog;
 					$log->description = 'User '.Yii::app()->user->Name.' changed '.$name.' for '.get_class($this->Owner).'['.$this->Owner->getPrimaryKey().'].';

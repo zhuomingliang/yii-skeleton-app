@@ -125,7 +125,7 @@ class UserController extends Controller {
 				}
 				
 				if ($user->save(false))
-					;//$this->redirect($redirect);
+					$this->redirect($redirect);
 
 			}
 		}
