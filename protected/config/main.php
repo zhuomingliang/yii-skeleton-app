@@ -42,7 +42,7 @@ return array(
 				),
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'trace, info, error, warning',
+					'levels'=>'error, warning',
 					'categories'=>'system.*',
 				),
 			),

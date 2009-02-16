@@ -30,5 +30,9 @@ $username = CHtml::encode($user->username); //cache the encoding
 </p>
 <?php if (!empty($user->about)) { ?>
 	<h3>About <?php echo $username; ?></h3>
-	<p><?php echo CHtml::encode($user->about); ?></p>
+	<p><?php
+	$this->beginWidget('system.web.widgets.CMarkdown', array('purifyOutput'=>true));
+	echo $user->about;
+	$this->endWidget();
+	?></p>
 <?php } ?>

@@ -14,7 +14,9 @@
 <div class="simple">
 <?php echo CHtml::activeLabel($user,'about'); ?>
 <?php echo CHtml::activeTextArea($user,'about'); ?>
-<p class="hint">This will appear on your user page.</p>
+<p class="hint">This will appear on your user page.<br />
+You may enter content using <?php echo CHtml::link('Markdown syntax', 'http://daringfireball.net/projects/markdown/syntax', array('target'=>'_blank'))?>.
+</p>
 </div>
 <div class="simple">
 <?php echo CHtml::activeLabel($user,'password'); ?>
