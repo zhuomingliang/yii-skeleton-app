@@ -20,16 +20,7 @@ class User extends CActiveRecord
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
-	
-	//  --  please ignore.
-	/*
-	public function behaviors(){
-        return array(
-            // Classname => path to Class
-            'LogableBehavior'=>
-                'application.components.LogableBehavior',
-        );
-    }//*/
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */

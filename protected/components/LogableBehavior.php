@@ -1,5 +1,15 @@
 <?php
-//please ignore
+/*
+Add the following to your model in order to use this behavior:
+
+	public function behaviors(){
+        return array(
+            // Classname => path to Class
+            'LogableBehavior'=>
+                'application.components.LogableBehavior',
+        );
+    }
+*/
 class LogableBehavior extends CActiveRecordBehavior {
 	protected $_oldAttributes = array();
  	
