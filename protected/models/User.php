@@ -22,13 +22,14 @@ class User extends CActiveRecord
 	}
 	
 	//  --  please ignore.
-	/*public function behaviors(){
+	/*
+	public function behaviors(){
         return array(
             // Classname => path to Class
             'LogableBehavior'=>
                 'application.components.LogableBehavior',
         );
-    }*/
+    }//*/
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -167,6 +168,7 @@ class User extends CActiveRecord
 			$email->view = 'changePassword';
 			$email->send(array('user' => &$this));
 		}
+		parent::afterSave();
 	}
 
 	public function generatePassword($length=20) {

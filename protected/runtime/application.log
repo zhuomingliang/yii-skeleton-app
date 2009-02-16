@@ -327,3 +327,890 @@
 2009/02/15 14:31:21 [trace] [system.db.CDbCommand] query with SQL: SELECT `User`.`id` AS t0_c0, `User`.`username` AS t0_c1, `User`.`password` AS t0_c2, `User`.`email` AS t0_c3, `User`.`email_visible` AS t0_c4, `User`.`notify_comments` AS t0_c5, `User`.`notify_messages` AS t0_c6, `User`.`about` AS t0_c7, `User`.`group_id` AS t0_c8, `User`.`email_confirmed` AS t0_c9, `User`.`created` AS t0_c10, `User`.`modified` AS t0_c11, t1.`id` AS t1_c0, t1.`name` AS t1_c1 FROM `User`  LEFT OUTER JOIN `Group` t1 ON `User`.`group_id`=t1.`id` ORDER BY user.email DESC, user.group_id DESC LIMIT 25 OFFSET 25
 2009/02/15 14:31:21 [trace] [system.base.CApplication] Loading "coreMessages" application component
 2009/02/15 14:31:21 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:55:06 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:55:06 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:55:06 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:55:06 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:55:06 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:55:07 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:55:33 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:55:33 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:55:33 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:55:33 [trace] [system.db.CDbCommand] query with SQL: SELECT COUNT(*) FROM `User`
+2009/02/15 20:55:33 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `Group`
+2009/02/15 20:55:33 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `Group`
+2009/02/15 20:55:33 [trace] [system.db.CDbCommand] query with SQL: SELECT `User`.`id` AS t0_c0, `User`.`username` AS t0_c1, `User`.`password` AS t0_c2, `User`.`email` AS t0_c3, `User`.`email_visible` AS t0_c4, `User`.`notify_comments` AS t0_c5, `User`.`notify_messages` AS t0_c6, `User`.`about` AS t0_c7, `User`.`group_id` AS t0_c8, `User`.`email_confirmed` AS t0_c9, `User`.`created` AS t0_c10, `User`.`modified` AS t0_c11, t1.`id` AS t1_c0, t1.`name` AS t1_c1 FROM `User`  LEFT OUTER JOIN `Group` t1 ON `User`.`group_id`=t1.`id` LIMIT 25
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "coreMessages" application component
+2009/02/15 20:55:33 [trace] [system.base.CApplication] Loading "assetManager" application component
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:55:36 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:55:36 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:55:36 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:55:36 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=26 LIMIT 1
+2009/02/15 20:55:36 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:55:39 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=26 LIMIT 1
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=26
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:55:39 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:55:39 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=26 LIMIT 1
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:55:39 [trace] [system.base.CApplication] Loading "assetManager" application component
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:55:48 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:55:48 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:55:48 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:55:48 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=26 LIMIT 1
+2009/02/15 20:55:48 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:56:07 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:56:07 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:56:07 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:56:07 [trace] [system.db.CDbCommand] query with SQL: SELECT COUNT(*) FROM `User`
+2009/02/15 20:56:07 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `Group`
+2009/02/15 20:56:07 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `Group`
+2009/02/15 20:56:07 [trace] [system.db.CDbCommand] query with SQL: SELECT `User`.`id` AS t0_c0, `User`.`username` AS t0_c1, `User`.`password` AS t0_c2, `User`.`email` AS t0_c3, `User`.`email_visible` AS t0_c4, `User`.`notify_comments` AS t0_c5, `User`.`notify_messages` AS t0_c6, `User`.`about` AS t0_c7, `User`.`group_id` AS t0_c8, `User`.`email_confirmed` AS t0_c9, `User`.`created` AS t0_c10, `User`.`modified` AS t0_c11, t1.`id` AS t1_c0, t1.`name` AS t1_c1 FROM `User`  LEFT OUTER JOIN `Group` t1 ON `User`.`group_id`=t1.`id` LIMIT 25
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "coreMessages" application component
+2009/02/15 20:56:07 [trace] [system.base.CApplication] Loading "assetManager" application component
+2009/02/15 20:56:11 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:56:11 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:56:11 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:56:11 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:56:11 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:56:11 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:56:11 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=24 LIMIT 1
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] Executing SQL: DELETE FROM `User` WHERE `User`.`id`=24
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 20:56:11 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:56:19 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:56:19 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:56:19 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:56:19 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:56:19 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:56:21 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:56:21 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:56:21 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:56:21 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:56:21 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:56:21 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:56:22 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:56:22 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:56:22 [trace] [system.base.CApplication] Loading "assetManager" application component
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:56:54 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:56:54 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:56:54 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:56:54 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:56:54 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:57:00 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:57:00 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:57:00 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:57:00 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:57:00 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 20:57:00 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:58:17 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:58:17 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:58:17 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:58:17 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:58:17 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 20:58:17 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:58:21 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:58:21 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:58:21 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:58:21 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:58:21 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 20:58:21 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:58:27 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:58:27 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:58:27 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:58:27 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:58:27 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 20:58:27 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 20:58:33 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 20:58:33 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 20:58:33 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 20:58:33 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 20:58:33 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 20:58:33 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:06:11 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:06:11 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:06:11 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:06:11 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "coreMessages" application component
+2009/02/15 21:06:11 [trace] [system.base.CApplication] Loading "errorHandler" application component
+2009/02/15 21:07:18 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:07:18 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:07:18 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:07:18 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:07:19 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:07:19 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:07:19 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:07:19 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:07:19 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:07:19 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:07:19 [trace] [system.base.CApplication] Loading "coreMessages" application component
+2009/02/15 21:07:19 [trace] [system.base.CApplication] Loading "errorHandler" application component
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:08:04 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:08:04 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:08:04 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:08:04 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:08:04 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:08:04 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:15:51 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:15:51 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:15:51 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:16:14 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:16:14 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:16:14 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:16:14 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:16:14 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:16:15 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:16:15 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:16:15 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:16:40 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:16:40 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:16:40 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:02 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:02 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:02 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:02 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:02 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:03 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:03 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:03 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:03 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:03 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:03 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:05 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:05 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:05 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:05 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:05 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:05 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:09 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:09 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:09 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:09 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:09 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:09 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:10 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:10 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:10 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:10 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:10 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:10 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:11 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:11 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:11 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:11 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:11 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:11 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:13 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:13 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:13 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:13 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:13 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:13 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:16 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:16 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:16 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:16 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:16 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:16 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:19 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:19 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:19 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:19 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:19 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:19 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:20 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:20 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:20 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:20 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:20 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:20 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:20 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:21 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:21 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:21 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:21 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:21 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:21 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:21 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:21 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:18:33 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:18:33 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:18:33 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:18:33 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:18:33 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:18:33 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:19:48 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:19:48 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:19:48 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:19:48 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:19:48 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:19:48 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:19:48 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:19:48 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:19:49 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:19:49 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:19:49 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:19:49 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:19:49 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:19:49 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:19:49 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:19:49 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:19:50 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:19:50 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:19:50 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:19:50 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:19:50 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:19:50 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:19:50 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:19:50 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:19:51 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:19:51 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:19:51 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:19:51 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:19:51 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:19:51 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:19:55 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:19:55 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:19:55 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:19:55 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:19:55 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:20:06 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:20:06 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:20:06 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:20:06 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:20:06 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:20:06 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:20:06 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:20:06 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:20:06 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:20:06 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:20:06 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:20:07 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:20:28 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:20:28 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:20:28 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:20:28 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:20:28 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:20:28 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:21:06 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:21:06 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:21:06 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:21:06 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:21:06 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:21:06 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:21:34 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:21:34 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:21:34 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:21:34 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:21:35 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:21:35 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:21:35 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:21:35 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:21:35 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:21:35 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:21:35 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:21:36 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:21:36 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:21:36 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:21:36 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:21:36 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:21:36 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:21:36 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:21:36 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:21:36 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:21:36 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:21:36 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:21:37 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:22:06 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:22:06 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:22:06 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:22:06 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:22:06 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:22:06 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:22:18 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:22:18 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:22:18 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:22:18 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:22:18 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:22:18 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:22:29 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:22:29 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:22:29 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:22:29 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:22:29 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:22:29 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:23:27 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:23:27 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:23:27 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:23:27 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:23:27 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:23:27 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:23:33 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:23:33 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:23:33 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:23:33 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:23:33 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:23:33 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:24:07 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:24:07 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:24:07 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:24:07 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:24:07 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:24:07 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:24:13 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:24:13 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:24:13 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:24:13 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:24:13 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:24:13 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:25:07 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:25:07 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:25:07 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:25:07 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:25:07 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:25:07 [trace] [system.base.CApplication] Loading "errorHandler" application component
+2009/02/15 21:25:25 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:25:25 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:25:25 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:25:25 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:25:25 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:25:25 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:25:25 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:25:26 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:25:26 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:25:26 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:25:26 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:25:26 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:25:45 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:25:45 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:25:45 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:25:45 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:25:45 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:25:45 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:30:19 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:30:19 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:30:19 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:30:19 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:30:19 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:30:19 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:30:53 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:30:53 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:30:53 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:30:53 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:30:53 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:30:53 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:31:08 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:31:08 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:31:08 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:31:08 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:31:08 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:31:08 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:34:17 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:34:17 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:34:17 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:34:17 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:34:17 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:34:17 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:34:48 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:34:48 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:34:48 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:34:48 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:34:48 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:34:48 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:34:58 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:34:58 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:34:58 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:34:58 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:34:58 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:34:58 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:35:34 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:35:34 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:35:34 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:35:34 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:35:34 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:35:34 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:41:09 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:41:09 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:41:09 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:41:09 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:41:09 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:41:12 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:41:12 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:41:12 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:42:18 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:42:18 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:42:18 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:42:55 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:42:55 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:42:55 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:43:37 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:43:37 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:43:37 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:44:59 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:44:59 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:44:59 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:46:45 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:46:45 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:46:45 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:46:52 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:46:52 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:46:52 [trace] [system.base.CApplication] Loading "clientScript" application component
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "log" application component
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "urlManager" application component
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "request" application component
+2009/02/15 21:47:15 [trace] [system.web.filters.CFilterChain] Running filter UserController.filteraccessControl()
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "user" application component
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "session" application component
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "db" application component
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `User`
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `User`
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] query with SQL: SELECT * FROM `User` WHERE `User`.`id`=27 LIMIT 1
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `User` SET `id`=:id, `username`=:username, `email`=:email, `email_visible`=:email_visible, `notify_comments`=:notify_comments, `notify_messages`=:notify_messages, `about`=:about, `group_id`=:group_id, `email_confirmed`=:email_confirmed, `created`=:created, `modified`=NOW() WHERE `User`.`id`=27
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] query with SQL: SHOW COLUMNS FROM `ActiveRecordLog`
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] query with SQL: SHOW CREATE TABLE `ActiveRecordLog`
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:47:15 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `ActiveRecordLog` (`description`, `action`, `model`, `idModel`, `field`, `creationdate`, `userid`) VALUES (:description, :action, :model, :idModel, :field, NOW(), :userid)
+2009/02/15 21:47:15 [trace] [system.base.CApplication] Loading "clientScript" application component

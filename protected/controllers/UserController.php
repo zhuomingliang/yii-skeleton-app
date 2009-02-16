@@ -102,33 +102,32 @@ class UserController extends Controller {
 
 		$user = $this->loadUser($id);
 		
-		//print_r($user->getSafeAttributeNames('update'));
 		if (isset($_POST['User'])) {
-			$updatedUser = clone $user;
-			$updatedUser->setAttributes($_POST['User'], 'update');
+			$oldEmail = $user->email;
+			$user->setAttributes($_POST['User'], 'update');
 
-			if ($updatedUser->validate('update')) {
+			if ($user->validate('update')) {
 				$redirect = array('show', 'id'=>$id);
 				
 				//email logic
-				if ($updatedUser->email != $user->email) {
-					$updatedUser->activated = false;
+				if ($user->email != $oldEmail) {
+					$user->activated = false;
 					$redirect = array('site/index');
 				}
 				
 				//so not to save blank password
-				if (empty($updatedUser->password))
-					unset($updatedUser->password);
+				if (empty($user->password))
+					unset($user->password);
 				else {
-					$updatedUser->encryptPassword();
+					$user->encryptPassword();
 					//email notification of new password
-					$updatedUser->sendNewPassword = true;
+					$user->sendNewPassword = true;
 				}
+				
+				if ($user->save(false))
+					;//$this->redirect($redirect);
 
-				if ($updatedUser->save(false))
-					$this->redirect($redirect);
 			}
-			$user = $updatedUser; //for errors and updated values
 		}
 		unset($user->password);
 		$this->render('update', array('user' => $user));
