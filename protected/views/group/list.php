@@ -14,7 +14,8 @@ Yii::app()->clientScript->registerScript('groupList', $script, CClientScript::PO
 ?>
 
 <h2>Groups</h2>
-
+<h3>Adding a group</h3>
+<p>To add a group, first add one here by clicking "New Group".  The group's id is it's user level.  Usually, the higher the number, the more powers.  After you have added the group here, edit the Group.php model file and add a class constant to Group (following the order of the other constants).</p>
 <div class="actionBar">
 <?php
 echo CHtml::link('New Group',array('create'), array('id'=>'newGroup', 'style'=>'display:none'))

@@ -31,6 +31,7 @@ $username = CHtml::encode($user->username); //cache the encoding
 <?php if (!empty($user->about)) { ?>
 	<h3>About <?php echo $username; ?></h3>
 	<p><?php
+	//We instead cache the generated code into the user column
 	$this->beginWidget('system.web.widgets.CMarkdown', array('purifyOutput'=>true));
 	echo $user->about;
 	$this->endWidget();

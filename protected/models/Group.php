@@ -4,6 +4,7 @@ class Group extends CActiveRecord
 {
 	//user rankings
 	//possibly should be moved to the WebUser class?
+	//the value of these constants match a group id in the group table
 	const GUEST=1;
 	const USER=2;
 	const ADMIN=3;
