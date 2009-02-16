@@ -9,8 +9,8 @@ class User extends CActiveRecord
 	public $passwordUnHashed;
 	
 	//Flags on whether to send certain emails in afterSave()
-	private $sendVerificationEmail = false;
-	private $sendNewPassword = false;
+	protected $sendVerificationEmail = false;
+	public $sendNewPassword = false;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -20,7 +20,15 @@ class User extends CActiveRecord
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
-
+	
+	//  --  please ignore.
+	/*public function behaviors(){
+        return array(
+            // Classname => path to Class
+            'LogableBehavior'=>
+                'application.components.LogableBehavior',
+        );
+    }*/
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -51,7 +59,6 @@ class User extends CActiveRecord
 		return array(
 			parent::safeAttributes(),
 			'update'=>'about, password, password_repeat',
-			'register'=>'',
 			'login'=>'username, password, rememberMe',
 		);
 	}
@@ -126,31 +133,17 @@ class User extends CActiveRecord
 		);
 	}
 	
-	public function unconfirmEmail() {
-		$this->email_confirmed = $this->generateVerifyPass();
-		
-		/*
-		* we don't send the verification email until afterSave() in case the user is
-		* actually not saved (for some reason or another, e.g. an error)
-		* So we simply set a flag instead
-		*/
-		$this->sendVerificationEmail = true;
+	public function encryptPassword() {
+		$this->passwordUnHashed = $this->password;
+		$this->password = md5($this->password);
 	}
-	
-	public function changePassword() {
-		$this->sendNewPassword = true;
-	}
-	
 	public function beforeSave() {
-		if (!empty($this->password)) {
-			$this->passwordUnHashed = $this->password;
-			$this->password = md5($this->password);
-		}
 		if ($this->isNewRecord)
 			$this->created = new CDbExpression('NOW()');
 		else
 			$this->modified = new CDbExpression('NOW()');
-		return true;
+			
+		return parent::beforeSave();
 	}
 	
 	public function afterSave() {
@@ -176,13 +169,13 @@ class User extends CActiveRecord
 		}
 	}
 
-	protected function generateVerifyPass() {
+	public function generatePassword($length=20) {
 		$chars = "abcdefghijkmnopqrstuvwxyz023456789";
 		srand((double)microtime()*1000000);
 		$i = 0;
 		$pass = '' ;
 		
-		while ($i <= 20) {
+		while ($i <= $length) {
 			$num = rand() % 33;
 			$tmp = substr($chars, $num, 1);
 			$pass .= $tmp;
@@ -194,7 +187,23 @@ class User extends CActiveRecord
 	public function getActivated() {
 		return $this->email_confirmed==null;
 	}
-	
+	public function setActivated($val) {
+		if ($val)
+			$this->email_confirmed = null;
+		else {
+			$this->email_confirmed = $this->generatePassword();
+			
+			/*
+			* we don't send the verification email until afterSave() in case the user is
+			* actually not saved (for some reason or another, e.g. an error)
+			* So we simply set a flag instead
+			*/
+			$this->sendVerificationEmail = true;
+		}
+	}
+	public function getActivationCode() {
+		return ($this->email_confirmed != null) ? $this->email_confirmed : false;
+	}
 	public function getPublicEmail($hidden = 'Hidden') {
 		return $this->email_visible ? $this->email : $hidden;
 	}

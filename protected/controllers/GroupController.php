@@ -22,7 +22,7 @@ class GroupController extends Controller
 	
 	public function accessRules() {
 		return array(
-			'*' => array(Group::ADMIN, 'min'),
+			'*' => array(Group::ADMIN, 'min'), //all actions require use to be at least an admin
 		);
 	}
 
@@ -30,12 +30,18 @@ class GroupController extends Controller
 	 * Lists all groups.
 	 */
 	public function actionList() {
-		$pages=$this->paginate(Group::model()->count());
-		$groupList=Group::model()->findAll($this->getListCriteria($pages));
+		$criteria = new CDbCriteria;
+		
+		$pages = new CPagination(Group::model()->count());
+		$pages->pageSize = 25;
+		$pages->applyLimit($criteria);
+		
+		$sort = new CSort('group');
+		$sort->applyOrder($criteria);
+		
+		$groups=Group::model()->findAll($criteria);
 
-		$this->render('list',array(
-			'groupList' => $groupList,
-			'pages' => $pages));
+		$this->render('list',compact('groups', 'pages', 'sort'));
 	}
 
 	/**
@@ -51,12 +57,11 @@ class GroupController extends Controller
 	 */
 	public function actionCreate() {
 		$group=new Group;
-		if (Yii::app()->request->isPostRequest)
-		{
-			if (isset($_POST['Group']))
-				$group->setAttributes($_POST['Group']);
+		if (Yii::app()->request->isPostRequest || isset($_POST['Group'])) {
+			$group->setAttributes($_POST['Group']);
+			
 			if ($group->save())
-				$this->redirect(array('show', 'id' => $group->id));
+				$this->redirect(array('list'));
 		}
 		$this->render('create', array('group' => $group));
 	}
@@ -68,11 +73,10 @@ class GroupController extends Controller
 	public function actionUpdate() {
 		$group=$this->loadGroup();
 		
-		if (Yii::app()->request->isPostRequest) {
-			if(isset($_POST['Group']))
-				$group->setAttributes($_POST['Group']);
+		if (Yii::app()->request->isPostRequest || isset($_POST['Group'])) {
+			$group->setAttributes($_POST['Group']);
 				
-			if($group->save())
+			if ($group->save())
 				$this->redirect(array('show','id'=>$group->id));
 		}
 		$this->render('update',array('group'=>$group));
@@ -83,12 +87,12 @@ class GroupController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'list' page.
 	 */
 	public function actionDelete() {
-		if (Yii::app()->request->isPostRequest) {
-			// we only allow deletion via POST request
-			$this->loadGroup()->delete();
-			$this->redirect(array('list'));
-		} else
+		// we only allow deletion via POST request
+		if (!Yii::app()->request->isPostRequest)
 			throw new CHttpException(500,'Invalid request. Please do not repeat this request again.');
+
+		$this->loadGroup()->delete();
+		$this->redirect(array('list'));
 	}
 
 	/**
@@ -103,46 +107,5 @@ class GroupController extends Controller
 			return $group;
 		else
 			throw new CHttpException(500,'The requested group does not exist.');
-	}
-
-	/**
-	 * @param CPagination the pagination information
-	 * @return CDbCriteria the query criteria for Group list.
-	 * It includes the ORDER BY and LIMIT/OFFSET information.
-	 */
-	protected function getListCriteria($pages) {
-		$criteria = Yii::createComponent('system.db.schema.CDbCriteria');
-		$columns = Group::model()->tableSchema->columns;
-		if (isset($_GET['sort']) && isset($columns[$_GET['sort']])) {
-			$criteria->order=$columns[$_GET['sort']]->rawName;
-			if (isset($_GET['desc']))
-				$criteria->order.=' DESC';
-		}
-		$criteria->limit = $pages->pageSize;
-		$criteria->offset = $pages->currentPage*$pages->pageSize;
-		return $criteria;
-	}
-
-	/**
-	 * Generates the header cell for the specified column.
-	 * This method will generate a hyperlink for the column.
-	 * Clicking on the link will cause the data to be sorted according to the column.
-	 * @param string the column name
-	 * @return string the generated header cell content
-	 */
-	protected function generateColumnHeader($column) {
-		$params=$_GET;
-		if (isset($params['sort']) && $params['sort']===$column)
-		{
-			if (isset($params['desc']))
-				unset($params['desc']);
-			else
-				$params['desc']=1;
-		} else {
-			$params['sort']=$column;
-			unset($params['desc']);
-		}
-		$url = $this->createUrl('list', $params);
-		return CHtml::link(Group::model()->getAttributeLabel($column), $url);
 	}
 }

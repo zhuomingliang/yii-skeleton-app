@@ -21,7 +21,7 @@ You have changed your email at <?php echo CHtml::encode(Yii::app()->name); ?> (<
 <p>
 Follow this link to activate your account:<br />
 <?php
-$url = Yii::app()->request->getBaseUrl(true) .CHtml::normalizeUrl('/users/verify/id/'.$user->id.'/code/'.$user->email_confirmed);
+$url = Yii::app()->request->getHostInfo().CHtml::normalizeUrl(array('user/verify', 'id'=>$user->id, 'code'=>$user->email_confirmed));
 echo CHtml::link($url, $url);
 ?>
 </p>

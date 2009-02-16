@@ -22,7 +22,7 @@ class Group extends CActiveRecord
 	public function rules() {
 		return array(
 			array('name','length','max'=>50),
-			array('name, created, modified', 'required'),
+			array('name', 'required'),
 		);
 	}
 

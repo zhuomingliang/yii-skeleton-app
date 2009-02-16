@@ -13,14 +13,6 @@
 <?php echo CHtml::activeLabel($group,'name'); ?>
 <?php echo CHtml::activeTextField($group,'name',array('size'=>50,'maxlength'=>50)); ?>
 </div>
-<div class="simple">
-<?php echo CHtml::activeLabel($group,'created'); ?>
-<?php echo CHtml::activeTextField($group,'created'); ?>
-</div>
-<div class="simple">
-<?php echo CHtml::activeLabel($group,'modified'); ?>
-<?php echo CHtml::activeTextField($group,'modified'); ?>
-</div>
 
 <div class="action">
 <?php echo CHtml::submitButton('Create'); ?>

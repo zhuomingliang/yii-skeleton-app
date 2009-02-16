@@ -80,15 +80,15 @@ class UserController extends Controller {
 
 	public function actionCreate() {
 		$user = new User;
-		//print_r($user->getSafeAttributeNames('register'));
 		
 		if (isset($_POST['User'])) {
 			$user->setAttributes($_POST['User'], 'register');
-			//print_r($user->attributes);
-			//print_r($user->getSafeAttributeNames('register'));
-			$user->unconfirmEmail();
-			if ($user->validate('register') && $user->save(false)) {
-				$this->redirect(array('site/index'));
+
+			$user->activated = false;
+			if ($user->validate('register')) {
+				$user->encryptPassword();
+				if ($user->save(false))
+					$this->redirect(array('site/index'));
 			}
 		}
 		$this->render('create',array('user' => $user));
@@ -112,7 +112,7 @@ class UserController extends Controller {
 				
 				//email logic
 				if ($updatedUser->email != $user->email) {
-					$updatedUser->unconfirmEmail();
+					$updatedUser->activated = false;
 					$redirect = array('site/index');
 				}
 				
@@ -120,8 +120,9 @@ class UserController extends Controller {
 				if (empty($updatedUser->password))
 					unset($updatedUser->password);
 				else {
+					$updatedUser->encryptPassword();
 					//email notification of new password
-					$updatedUser->changePassword();
+					$updatedUser->sendNewPassword = true;
 				}
 
 				if ($updatedUser->save(false))
@@ -146,7 +147,7 @@ class UserController extends Controller {
 					$email = Yii::app()->email;
 					$email->to = $found->email;
 					$email->view = 'UserRecover';
-					$email->send(array('user' => $found));
+					$email->send(array('user' => $found, 'newPassword'=>false));
 					Yii::app()->user->setFlash('recover', "An email has been sent to {$user->email}.  Please check your email.");
 				} else {
 					$user->addError('email', 'Email not found');
@@ -155,6 +156,27 @@ class UserController extends Controller {
 		}
 
 		$this->render('recover',array('user' => $user));
+	}
+	public function actionRecoverPassword() {
+		if (!isset($_GET['id'], $_GET['pass']))
+			throw new CHttpException(404,'Invalid request');
+			
+		if ($user = User::model()->findbyPk($_GET['id'])) {
+			if ($user->password != $_GET['pass']) 
+				throw new CHttpException(404,'Invalid auth key');
+			$user->password = $user->generatePassword(6);
+			$user->encryptPassword();
+			$user->save(false);
+			
+			$email = Yii::app()->email;
+			$email->to = $user->email;
+			$email->view = 'UserRecover';
+			$email->send(array('user' => $user, 'newPassword'=>true));
+			
+			Yii::app()->user->setFlash('recover', "Thank you.  A new password has been sent to your email.");
+			$this->render('recover',array('user' => $user));
+		} else
+			throw new CHttpException(404,'Invalid user');
 	}
 
 	public function actionDelete() {
@@ -171,6 +193,24 @@ class UserController extends Controller {
 			//throw new CHttpException(404,'Invalid request. Please do not repeat this request again.  You must have JavaScript turned on!');
 	}
 
+	public function actionVerify() {
+		if (!isset($_GET['id'], $_GET['code']))
+			throw new CHttpException(404,'Invalid request');
+			
+		if ($user = User::model()->findbyPk($_GET['id'])) {
+			if ($user->activated)
+				throw new CHttpException(400,'User already verified');
+			if ($user->activationCode == $_GET['code']) {
+				$user->activated = true;
+				$user->save(false);	
+				$this->render('activated');
+			} else
+				throw new CHttpException(400,'Incorrect verification code');
+		} else
+			throw new CHttpException(404,'Invalid user');
+			
+	}
+	
 	protected function loadUser($id = null) {
 		if ($id == null)
 			$id = $_GET['id'];
