@@ -1,6 +1,6 @@
 <?php
 
-class User extends CActiveRecord
+class User extends ActiveRecord
 {
 	public $rememberMe;
 	public $password_repeat;

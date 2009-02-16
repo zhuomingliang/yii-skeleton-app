@@ -1,6 +1,6 @@
 <?php
 
-class Group extends CActiveRecord
+class Group extends ActiveRecord
 {
 	//user rankings
 	//possibly should be moved to the WebUser class?
