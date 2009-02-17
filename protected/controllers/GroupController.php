@@ -32,7 +32,7 @@ class GroupController extends Controller
 	public function actionList() {
 		$criteria = new CDbCriteria;
 		
-		$pages = new CPagination(Group::model()->count());
+		$pages = new CPagination(Group::model()->count($criteria));
 		$pages->pageSize = 25;
 		$pages->applyLimit($criteria);
 		

@@ -48,7 +48,7 @@ class UserController extends Controller {
 	public function actionList() {
 		$criteria = new CDbCriteria;
 
-		$pages = new CPagination(User::model()->count());
+		$pages = new CPagination(User::model()->count($criteria));
 		$pages->pageSize = 25;
 		$pages->applyLimit($criteria);
 		
