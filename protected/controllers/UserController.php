@@ -148,6 +148,7 @@ class UserController extends Controller {
 					$email->view = 'UserRecover';
 					$email->send(array('user' => $found, 'newPassword'=>false));
 					Yii::app()->user->setFlash('recover', "An email has been sent to {$user->email}.  Please check your email.");
+					$this->refresh();
 				} else {
 					$user->addError('email', 'Email not found');
 				}
