@@ -145,3 +145,17 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `email_visible`, `not
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `group` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+  
+--
+-- Table structure for table `parsecache`
+-- You need this if you plan on using the ParseCacheBehavior
+--
+
+CREATE TABLE IF NOT EXISTS `parsecache` (
+  `table` varchar(20) NOT NULL,
+  `id` int(11) NOT NULL,
+  `column` varchar(20) NOT NULL,
+  `content` text NOT NULL,
+  PRIMARY KEY (`table`,`id`,`column`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;

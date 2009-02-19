@@ -20,7 +20,15 @@ class User extends ActiveRecord
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
-
+	public function behaviors(){
+		return array(
+			'ParseCacheBehavior' => array(
+				'class' => 'application.components.ParseCacheBehavior',
+				'columns' => array('about')
+			)
+		);
+	}
+	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -110,6 +118,7 @@ class User extends ActiveRecord
 	public function relations() {
 		return array(
 			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
+			'parsecache' => $this->parseCacheRelation(),
 		);
 	}
 
@@ -129,7 +138,8 @@ class User extends ActiveRecord
 		$this->passwordUnHashed = $this->password;
 		$this->password = md5($this->password);
 	}
-	public function beforeSave() {
+
+	protected function beforeSave() {
 		if ($this->isNewRecord)
 			$this->created = new CDbExpression('NOW()');
 		else
@@ -138,7 +148,7 @@ class User extends ActiveRecord
 		return parent::beforeSave();
 	}
 	
-	public function afterSave() {
+	protected function afterSave() {
 		if ($this->sendVerificationEmail) {
 			//so not to try to logout new registrations (that have not even been logged in yet)
 			//must logout user before flashing, as flashes are erased when logged out.
