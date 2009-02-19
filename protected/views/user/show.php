@@ -23,7 +23,7 @@ $username = CHtml::encode($user->username); //cache the encoding
 ?>
 <h2><?php echo $username ?>'s Profile</h2>
 <p>
-	Joined on <b><?php echo date('F d, o', strtotime($user->created)); ?></b>
+	Joined on <b><?php echo Time::nice($user->created, 'F d, o'); ?></b>
 	<?php if ($user->email_visible) {?>
 		<br />Email: <b><?php echo $user->email ?></b>
 	<?php } ?>
