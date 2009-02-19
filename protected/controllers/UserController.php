@@ -73,13 +73,7 @@ class UserController extends Controller {
 	}
 
 	public function actionShow() {
-		//$user = $this->loadUser(isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id);
-		$id = isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id;
-
-		$user = User::model()->findbyPk($id);
-
-		if (!isset($user))
-			throw new CHttpException(404,'The requested user does not exist.');
+		$user = $this->loadUser(isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id);
 
 		$this->render('show', array('user' => $user));
 	}
