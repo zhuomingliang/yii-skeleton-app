@@ -1,10 +1,8 @@
-<h2>
-	Welcome, <?php echo Yii::app()->user->name; ?>!
-</h2>
 
 <?php
 $this->beginWidget('system.web.widgets.CMarkdown');
 ?>
+# Yii Skeleton Application
 Note: Usually requires nightly build of Yii
 
 Includes:
