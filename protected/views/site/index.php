@@ -5,7 +5,7 @@ $this->beginWidget('system.web.widgets.CMarkdown');
 # Yii Skeleton Application
 Note: Usually requires nightly build of Yii
 
-Includes:
+### Features:
 
 * User management
      1. Login/logout
@@ -25,11 +25,12 @@ Includes:
 * Contact page
 * Logging and clean urls configured 
 
-Checklist for installing:
+### Checklist for installing:
 
 * Edit paths in index.php as necessary
 * Set up database in the main.php config file
-* Run sql in the config/tables.sql
+* Run sql in the protected/config/tables.sql
+* Optionally load mysql test data in protected/config/
 * Login as admin with usrname=admin, password=admin 
 
 ## Links
