@@ -31,7 +31,7 @@ class UserController extends Controller {
 		if (Yii::app()->request->isPostRequest) {
 			// collect user input data
 			if (isset($_POST['User']))
-				$user->setAttributes($_POST['User']);
+				$user->setAttributes($_POST['User'], 'login');
 			// validate user input and redirect to previous page if valid
 			if ($user->validate('login'))// ;
 				$this->redirect(Yii::app()->user->returnUrl);
@@ -137,7 +137,7 @@ class UserController extends Controller {
 		$user = new User;
 
 		if (isset($_POST['User'])) {
-			$user->setAttributes($_POST['User']);
+			$user->setAttributes($_POST['User'], 'recover');
 
 			if ($user->validate('recover')) {				
 				$found = User::model()->findByAttributes(array('email'=>$user->email));
