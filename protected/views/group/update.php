@@ -1,10 +1,11 @@
 <h2>Update Group <?php echo $group->id; ?></h2>
 
-<div class="actionBar">
-[<?php echo CHtml::link('Group List',array('list')); ?>]
-[<?php echo CHtml::link('New Group',array('create')); ?>]
-</div>
-
+<?php
+$items = array();
+$items[] = array('Group Listing',array('list'));
+$items[] = array('New Group',array('create'));
+$this->widget('application.components.Menu',array('items'=>$items));
+?>
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>
 

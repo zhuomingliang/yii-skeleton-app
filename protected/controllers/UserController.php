@@ -182,15 +182,14 @@ class UserController extends Controller {
 	public function actionDelete() {
 		//throw new CHttpException(404,'bad'); //was used for testing ajax
 		
-		//  --  Sorry for the commented out code.  I may need it but just ignore  --
-		//if (Yii::app()->request->isPostRequest) {
+		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadUser()->delete();
 			if (!Yii::app()->request->isAjaxRequest)
 				$this->redirect(array('list'));
-		//}
-		//else
-			//throw new CHttpException(404,'Invalid request. Please do not repeat this request again.  You must have JavaScript turned on!');
+		}
+		else
+			throw new CHttpException(404,'Invalid request. Please do not repeat this request again.  You must have JavaScript turned on!');
 	}
 
 	public function actionVerify() {

@@ -1,19 +1,31 @@
-<div class="actionBar">
 <?php
-echo CHtml::link('Archive',array('list'))." ";
+Yii::app()->clientScript->registerCoreScript('yii');
+$script = <<<EOD
+function deleteItem(){
+	if (confirm('Are you sure?')) {
+		jQuery.yii.submitForm(this,this.href,{});
+	}
+	return false;
+}
 
-echo CHtml::link('New Post',array('create'))." ";
+$(".deleteItem").click(deleteItem);
+EOD;
+Yii::app()->clientScript->registerScript('userShow', $script, CClientScript::POS_READY);
 
-if (($post->user_id == Yii::app()->user->id) || Yii::app()->user->hasAuth(Group::ADMIN))
-	echo CHtml::link('Edit Post',array('update','id'=>$post->id))." ";
 
-if (($post->user_id == Yii::app()->user->id) || Yii::app()->user->hasAuth(Group::ADMIN))
-	echo CHtml::linkButton('Delete Post',array('submit'=>array('delete','id'=>$post->id),'confirm'=>'Are you sure?'))." ";
-
+$items = array();
+$items[] = array('Archive',array('list'));
+$items[] = array('New Post',array('create'));
+if (($post->user_id == Yii::app()->user->id) || Yii::app()->user->hasAuth(Group::ADMIN)) {
+	$items[] = array('Edit Post',array('update','id'=>$post->id));
+	$items[] = array('Delete Post',array('delete','id'=>$post->id), 'htmlOptions'=>array('class' => 'deleteItem'));
+}
 if (Yii::app()->user->hasAuth(Group::ADMIN))
-	echo CHtml::link('Admin',array('admin'));
+	$items[] = array('Admin',array('admin'));
+
+$this->widget('application.components.Menu',array('items'=>$items));
 ?>
-</div>
+
 
 <h2><?php echo CHtml::encode($post->title); ?></h2>
 <p class="summary">By <?php echo CHtml::link(CHtml::encode($post->user->username), array('user/show', 'id'=>$post->user->id)); ?>  on 

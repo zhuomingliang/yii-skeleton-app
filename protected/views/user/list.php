@@ -9,13 +9,13 @@ function updatePage() {
 		
 		$('.yiiPager a').bind("click", updatePage);
 		$('#listPage #sort-buttons a').bind("click", updatePage);
-		$('#listPage .deleteUser').bind("click", deleteUser);
+		$('#listPage .deleteItem').bind("click", deleteItem);
 	});
 
 	return false;
 }
 
-function deleteUser(){
+function deleteItem(){
 	if (confirm('Are you sure you want to delete the user "'+$(this).parent().parent().find(".username a").html()+'"?')) {
 		$.post($(this).attr('href'), {}, function(response) {
 		});
@@ -25,7 +25,7 @@ function deleteUser(){
 	return false;
 }
 
-$(".deleteUser").click(deleteUser).ajaxError(function(event, request, settings){
+$(".deleteItem").click(deleteItem).ajaxError(function(event, request, settings){
   alert("Error requesting page " + settings.url);
 });
 

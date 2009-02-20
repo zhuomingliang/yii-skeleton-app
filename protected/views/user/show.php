@@ -1,24 +1,26 @@
 <?php
+Yii::app()->clientScript->registerCoreScript('yii');
 $script = <<<EOD
-
-function deleteUser(){
-	return confirm('Are you sure you want to delete this user?');
+function deleteItem(){
+	if (confirm('Are you sure?')) {
+		jQuery.yii.submitForm(this,this.href,{});
+	}
+	return false;
 }
 
-$(".deleteUser").click(deleteUser);
+$(".deleteItem").click(deleteItem);
 EOD;
 
 Yii::app()->clientScript->registerScript('userShow', $script, CClientScript::POS_READY);
-?>
-<div class="actionBar">
-[<?php echo CHtml::link('User List',array('list')); ?>]
-<?php if (Yii::app()->user->hasAuth(Group::ADMIN)){ ?>
-[<?php echo CHtml::link('Update User',array('update','id'=>$user->id)); ?>]
-[<?php echo CHtml::link('Delete User',array('delete','id'=>$user->id), array('class' => 'deleteUser')); ?>]
-<?php } ?>
-</div>
 
-<?php
+$items = array();
+$items[] = array('User List', array('list'));
+if (Yii::app()->user->hasAuth(Group::ADMIN)){
+	$items[] = array('Update User', array('update','id'=>$user->id));
+	$items[] = array('Delete User', array('delete','id'=>$user->id), 'htmlOptions'=>array('class' => 'deleteItem'));
+}
+$this->widget('application.components.Menu',array('items'=>$items));
+
 $username = CHtml::encode($user->username); //cache the encoding
 ?>
 <h2><?php echo $username ?>'s Profile</h2>

@@ -26,7 +26,7 @@
 			//echo CHtml::linkButton('Delete', array('submit' => array('delete', 'id' => $user->id), 'confirm' => 'Are you sure?'));
 			?>
 			|
-			<?php echo CHtml::link('Delete', array('delete', 'id' => $user->id), array('class' => 'deleteUser'));
+			<?php echo CHtml::link('Delete', array('delete', 'id' => $user->id), array('class' => 'deleteItem'));
 			?>
 		</td>
 		<?php } ?>

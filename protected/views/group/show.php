@@ -1,11 +1,26 @@
 <h2>View Group <?php echo $group->id; ?></h2>
 
-<div class="actionBar">
-[<?php echo CHtml::link('Groups Listing',array('list')); ?>]
-[<?php echo CHtml::link('New Group',array('create')); ?>]
-[<?php echo CHtml::link('Rename Group',array('update','id'=>$group->id)); ?>]
-[<?php echo CHtml::linkButton('Delete Group',array('submit'=>array('delete','id'=>$group->id),'confirm'=>'Are you sure?')); ?>]
-</div>
+<?php
+Yii::app()->clientScript->registerCoreScript('yii');
+$script = <<<EOD
+function deleteItem(){
+	if (confirm('Are you sure?')) {
+		jQuery.yii.submitForm(this,this.href,{});
+	}
+	return false;
+}
+
+$(".deleteItem").click(deleteItem);
+EOD;
+
+Yii::app()->clientScript->registerScript('userShow', $script, CClientScript::POS_READY);
+
+$items = array();
+$items[] = array('Group Listing',array('list'));
+$items[] = array('Rename Group',array('update','id'=>$group->id));
+$items[] = array('Delete Group',array('delete','id'=>$group->id), 'htmlOptions'=>array('class' => 'deleteItem'));
+$this->widget('application.components.Menu',array('items'=>$items));
+?>
 
 <table class="dataGrid">
 <tr>

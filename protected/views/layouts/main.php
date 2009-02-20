@@ -19,14 +19,15 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 </div>
 <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 <div id="mainmenu">
-<?php $this->widget('application.components.MainMenu',array(
+<?php $this->widget('application.components.Menu',array(
 	'items'=>array(
-		array('label'=>'Home', 'url' => array('site/index')),
-		array('label'=>'Contact', 'url' => array('site/contact')),
-		array('label'=>'Users', 'url' => array('user/list')),
-		array('label'=>'Posts', 'url' => array('post/list')),
-		array('label'=>'Groups', 'url' => array('group/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
+		array('Home', array('site/index')),
+		array('Contact', array('site/contact')),
+		array('Users', array('user/list')),
+		array('Posts', array('post/list')),
+		array('Groups', array('group/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
 	),
+	'view' => 'mainMenu'
 )); ?>
 </div><!-- mainmenu -->
 </div><!-- header -->

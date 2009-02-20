@@ -1,8 +1,11 @@
 <h2>New Group</h2>
 
-<div class="actionBar">
-[<?php echo CHtml::link('Group List',array('list')); ?>]
-</div>
+<?php
+$items = array();
+$items[] = array('Group List',array('list'));
+$this->widget('application.components.Menu',array('items'=>$items));
+?>
+
 
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>

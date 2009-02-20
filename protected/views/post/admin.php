@@ -1,9 +1,28 @@
+<?php
+Yii::app()->clientScript->registerCoreScript('yii');
+$script = <<<EOD
+function deleteItem(){
+	if (confirm('Are you sure?')) {
+		jQuery.yii.submitForm(this,this.href,{});
+	}
+	return false;
+}
+
+$(".deleteItem").click(deleteItem);
+EOD;
+
+Yii::app()->clientScript->registerScript('userShow', $script, CClientScript::POS_READY);
+?>
+
 <h2>Managing Post</h2>
 
-<div class="actionBar">
-[<?php echo CHtml::link('Post List',array('list')); ?>]
-[<?php echo CHtml::link('New Post',array('create')); ?>]
-</div>
+<?php
+$items = array();
+$items[] = array('Post List',array('list'));
+$items[] = array('New Post',array('create'));
+$this->widget('application.components.Menu',array('items'=>$items));
+?>
+
 
 <table class="dataGrid">
   <tr>
@@ -23,10 +42,7 @@
     <td><?php echo CHtml::encode($model->modified); ?></td>
     <td>
       <?php echo CHtml::link('Update',array('update','id'=>$model->id)); ?>
-      <?php echo CHtml::linkButton('Delete',array(
-      	  'submit'=>'',
-      	  'params'=>array('command'=>'delete','id'=>$model->id),
-      	  'confirm'=>"Are you sure to delete #{$model->id}?")); ?>
+      <?php echo CHtml::link('Delete',array('delete','id'=>$model->id), array('class'=>'deleteItem')); ?>
 	</td>
   </tr>
 <?php endforeach; ?>

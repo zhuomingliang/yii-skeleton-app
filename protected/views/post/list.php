@@ -1,16 +1,16 @@
 <h2>Archive</h2>
 
-<div class="actionBar">
+
 <?php
+$items = array();
+$items[] = array('New Post',array('create'));
+if (Yii::app()->user->hasAuth(Group::ADMIN)){
+	$items[] = array('Admin',array('admin'));
+}
+$this->widget('application.components.Menu',array('items'=>$items));
 
-echo CHtml::link('New Post',array('create'))." ";
-
-if (Yii::app()->user->hasAuth(Group::ADMIN))
-	echo CHtml::link('Admin',array('admin'));
+$this->widget('CLinkPager',array('pages'=>$pages));
 ?>
-</div>
-
-<?php $this->widget('CLinkPager',array('pages'=>$pages)); ?>
 <?php foreach($posts as $n=>$post): ?>
 <h4><?php echo CHtml::link($post->title,array('show','id'=>$post->id)); ?></h4>
 <p class="summary">

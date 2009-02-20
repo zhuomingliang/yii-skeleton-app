@@ -103,6 +103,7 @@ p {padding:0; margin: 5px 0 0 0;}
 /* begin data grid style */
 table.dataGrid
 {
+	margin-top: 5px;
 	background: white;
 	border-collapse: collapse;
 	width: 100%;
@@ -134,7 +135,9 @@ table.dataGrid tr.odd
 
 .actionBar
 {
-	margin: 10px;
+	margin: 5px;
+	padding: 5px;
+	background: #EEE;
 }
 
 div.item
