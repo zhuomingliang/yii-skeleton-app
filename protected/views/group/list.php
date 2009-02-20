@@ -10,7 +10,7 @@ $('#newGroup').click(function() {
 EOD;
 
 Yii::app()->clientScript->registerScript('groupList', $script, CClientScript::POS_READY);
-//Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.jeditable.mini.js');
+JavaScript::deleteItem();
 ?>
 
 <h2>Groups</h2>
@@ -37,7 +37,7 @@ echo CHtml::link('New Group',array('create'), array('id'=>'newGroup', 'style'=>'
     <td><?php echo CHtml::encode($group->name); ?></td>
     <td>
       <?php echo CHtml::link('Rename',array('update','id'=>$group->id)); ?>
-      <?php echo CHtml::linkButton('Delete',array('submit'=>array('delete','id'=>$group->id),'confirm'=>'Are you sure?')); ?>
+      <?php echo CHtml::link('Delete', array('delete','id'=>$group->id), array('class'=>'deleteItem')); ?>
 	</td>
   </tr>
 <?php endforeach; ?>

@@ -1,19 +1,7 @@
 <h2>View Group <?php echo $group->id; ?></h2>
 
 <?php
-Yii::app()->clientScript->registerCoreScript('yii');
-$script = <<<EOD
-function deleteItem(){
-	if (confirm('Are you sure?')) {
-		jQuery.yii.submitForm(this,this.href,{});
-	}
-	return false;
-}
-
-$(".deleteItem").click(deleteItem);
-EOD;
-
-Yii::app()->clientScript->registerScript('userShow', $script, CClientScript::POS_READY);
+JavaScript::deleteItem();
 
 $items = array();
 $items[] = array('Group Listing',array('list'));
