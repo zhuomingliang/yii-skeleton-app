@@ -9,6 +9,27 @@ body
 	background:white url(bg.gif) repeat-x left top;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
+h5, h6 {
+	font-weight: bold;
+}
+h1 { font-size: 200%; margin-top: 0.8em;}
+h2 { font-size: 170%; margin-top: 0.5em;}
+h3 { font-size: 160%; margin-top: 0.5em;}
+h4 { font-size: 130%; margin-top: 0.5em;}
+h5 { font-size: 140%; margin-top: 0.3em;}
+p {padding:0; margin: 5px 0 0 0;}
+.summary {
+	font-size: 80%;
+	color: #525252;
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
 #page
 {
 	width: 750px;

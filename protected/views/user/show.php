@@ -30,5 +30,15 @@ $username = CHtml::encode($user->username); //cache the encoding
 </p>
 <?php if (!empty($user->about)) { ?>
 	<h3>About <?php echo $username; ?></h3>
+	<div class="markdown">
 	<?php echo $user->getCache('about'); ?>
+	</div>
 <?php } ?>
+
+<h4>Posts by <?php echo $username; ?></h4>
+<?php foreach($user->post as $n=>$post): ?>
+<h4><?php echo CHtml::link($post->title,array('post/show','id'=>$post->id)); ?></h4>
+<p class="summary">
+On <?php echo Time::nice($post->created); ?>
+</p>
+<?php endforeach; ?>

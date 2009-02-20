@@ -75,7 +75,7 @@ class UserController extends Controller {
 	public function actionShow() {
 		$user = $this->loadUser(isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id);
 
-		$this->render('show', array('user' => $user));
+		$this->render('show', compact('user'));
 	}
 
 	public function actionCreate() {
@@ -91,7 +91,7 @@ class UserController extends Controller {
 					$this->redirect(array('site/index'));
 			}
 		}
-		$this->render('create',array('user' => $user));
+		$this->render('create', compact('user'));
 	}
 
 	public function actionUpdate() {
@@ -130,7 +130,7 @@ class UserController extends Controller {
 			}
 		}
 		unset($user->password);
-		$this->render('update', array('user' => $user));
+		$this->render('update', compact('user'));
 	}
 	
 	public function actionRecover() {
@@ -155,7 +155,7 @@ class UserController extends Controller {
 			}
 		}
 
-		$this->render('recover',array('user' => $user));
+		$this->render('recover', compact('user'));
 	}
 	public function actionRecoverPassword() {
 		if (!isset($_GET['id'], $_GET['pass']))

@@ -24,7 +24,11 @@ class User extends ActiveRecord
 		return array(
 			'ParseCacheBehavior' => array(
 				'class' => 'application.components.ParseCacheBehavior',
-				'columns' => array('about')
+				'columns' => array('about'),
+				'cssFile' => '/css/markdown.css'
+			),
+			'AutoTimestampBehavior' => array(
+				'class' => 'application.components.AutoTimestampBehavior',
 			)
 		);
 	}
@@ -96,8 +100,9 @@ class User extends ActiveRecord
 	
 	public function relations() {
 		return array(
-			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
 			'parsecache' => $this->parseCacheRelation(),
+			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
+			'post' => array(self::HAS_MANY, 'Post', 'user_id'),
 		);
 	}
 
@@ -118,15 +123,6 @@ class User extends ActiveRecord
 		$this->password = md5($this->password);
 	}
 
-	protected function beforeSave() {
-		if ($this->isNewRecord)
-			$this->created = new CDbExpression('NOW()');
-		else
-			$this->modified = new CDbExpression('NOW()');
-			
-		return parent::beforeSave();
-	}
-	
 	protected function afterSave() {
 		if ($this->sendVerificationEmail) {
 			//so not to try to logout new registrations (that have not even been logged in yet)

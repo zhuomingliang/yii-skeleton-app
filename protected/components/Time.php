@@ -1,5 +1,7 @@
 <?php
 class Time {
+	const LONG='D, M jS Y, H:i';
+	const SHORT='F d, o';
 	/**
 	* Returns a nicely formatted date string for given Datetime string.
 	*
@@ -7,7 +9,7 @@ class Time {
 	* @param int $format Format of returned date
 	* @return string Formatted date string
 	*/
-	public static function nice($dateString = null, $format = 'D, M jS Y, H:i') {
+	public static function nice($dateString = null, $format = 'F d, o') {
 
 		$date = ($dateString == null) ? time() : strtotime($dateString);
 		return date($format, $date);

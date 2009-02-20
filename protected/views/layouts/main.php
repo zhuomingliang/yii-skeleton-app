@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
 <?php
-echo CHtml::cssFile(Yii::app()->request->baseUrl."/css/main.css");
-echo CHtml::cssFile(Yii::app()->request->baseUrl."/css/form.css");
+echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/main.css');
+echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 ?>
 <title><?php echo $this->pageTitle; ?></title>
 </head>
@@ -24,6 +24,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl."/css/form.css");
 		array('label'=>'Home', 'url' => array('site/index')),
 		array('label'=>'Contact', 'url' => array('site/contact')),
 		array('label'=>'Users', 'url' => array('user/list')),
+		array('label'=>'Posts', 'url' => array('post/list')),
 		array('label'=>'Groups', 'url' => array('group/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
 	),
 )); ?>
