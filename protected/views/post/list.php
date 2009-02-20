@@ -1,8 +1,13 @@
-<h2>Post List</h2>
+<h2>Archivet</h2>
 
 <div class="actionBar">
-[<?php echo CHtml::link('New Post',array('create')); ?>]
-[<?php echo CHtml::link('Admin',array('admin')); ?>]
+<?php
+
+echo CHtml::link('New Post',array('create'))." ";
+
+if (Yii::app()->user->hasAuth(Group::ADMIN))
+	echo CHtml::link('Admin',array('admin'));
+?>
 </div>
 
 <?php $this->widget('CLinkPager',array('pages'=>$pages)); ?>
