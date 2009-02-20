@@ -1,4 +1,4 @@
-<h2>Archivet</h2>
+<h2>Archive</h2>
 
 <div class="actionBar">
 <?php

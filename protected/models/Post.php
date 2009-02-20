@@ -47,7 +47,14 @@ class Post extends ActiveRecord
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
-
+	public function safeAttributes() {
+		/**
+		* ActiveRecord is extended to know that 'required' attributes are 'safe'.
+		* We return a empty array so that it won't think 'created' and 'modified' are 'safe'.
+		* It will still know 'title' and 'content' are safe because they are 'required'
+		*/
+		return array(); 
+	}
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

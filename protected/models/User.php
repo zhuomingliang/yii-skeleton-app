@@ -61,7 +61,7 @@ class User extends ActiveRecord
 	
 	public function safeAttributes() {
 		return array(
-			parent::safeAttributes(),
+			//parent::safeAttributes(),
 			'update'=>'about, password, password_repeat',
 			'login'=>'username, password, rememberMe',
 		);
