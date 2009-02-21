@@ -25,13 +25,6 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	*/
 	public $cacheBeforeValidate = false;
 	
-	/**
-	* Css file to be registered when getting caches/parsed data
-	* Useful if you want a css file included for instance when printing markdown content
-	* Should be relative to application directory
-	*/
-	public $cssFile = false;
-	
 	protected $caches = array();
 	protected $cached = false;
 	protected $_markdownParser = null;
@@ -82,8 +75,6 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 				$this->caches[$column]->save(false);
 			}
 		}
-		if ($this->cssFile)
-			Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.$this->cssFile);
 		return $this->caches[$column]->content;
 	}
 	public function cacheColumns() {

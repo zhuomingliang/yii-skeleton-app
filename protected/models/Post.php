@@ -22,7 +22,6 @@ class Post extends ActiveRecord
 			'ParseCacheBehavior' => array(
 				'class' => 'application.components.ParseCacheBehavior',
 				'columns' => array('content'),
-				'cssFile' => '/css/markdown.css'
 			),
 			'AutoTimestampBehavior' => array(
 				'class' => 'application.components.AutoTimestampBehavior',

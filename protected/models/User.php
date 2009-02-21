@@ -25,7 +25,6 @@ class User extends ActiveRecord
 			'ParseCacheBehavior' => array(
 				'class' => 'application.components.ParseCacheBehavior',
 				'columns' => array('about'),
-				'cssFile' => '/css/markdown.css'
 			),
 			'AutoTimestampBehavior' => array(
 				'class' => 'application.components.AutoTimestampBehavior',
