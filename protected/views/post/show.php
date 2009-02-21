@@ -14,7 +14,7 @@ if (Yii::app()->user->hasAuth(Group::ADMIN))
 $this->widget('application.components.Menu',array('items'=>$items));
 ?>
 
-
+<div class="post">
 <h2><?php echo CHtml::encode($post->title); ?></h2>
 <p class="summary">By <?php echo CHtml::link(CHtml::encode($post->user->username), array('user/show', 'id'=>$post->user->id)); ?>  on 
 <?php echo Time::nice($post->created);
@@ -27,6 +27,7 @@ if ($post->modified) {
 
 <div class="markdown">
 <?php echo $post->getCache('content'); ?>
+</div>
 </div>
 
 </p>

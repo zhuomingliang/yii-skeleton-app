@@ -2,7 +2,6 @@
 
 class PostController extends Controller
 {
-	const PAGE_SIZE=15;
 
 	/**
 	 * @var string specifies the default action to be 'list'.
@@ -109,10 +108,10 @@ class PostController extends Controller
 		$criteria=new CDbCriteria;
 
 		$pages=new CPagination(Post::model()->count($criteria));
-		$pages->pageSize=self::PAGE_SIZE;
+		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
 
-		$posts=Post::model()->with('user')->findAll($criteria);
+		$posts=Post::model()->with('user', 'parsecache')->findAll($criteria);
 
 		$this->render('list', compact('posts','pages'));
 	}
@@ -127,7 +126,7 @@ class PostController extends Controller
 		$criteria=new CDbCriteria;
 
 		$pages=new CPagination(Post::model()->count($criteria));
-		$pages->pageSize=self::PAGE_SIZE;
+		$pages->pageSize=25;
 		$pages->applyLimit($criteria);
 
 		$sort=new CSort('Post');

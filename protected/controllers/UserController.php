@@ -74,8 +74,15 @@ class UserController extends Controller {
 
 	public function actionShow() {
 		$user = $this->loadUser(isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id);
-
-		$this->render('show', compact('user'));
+		
+		$criteria=new CDbCriteria;
+		$criteria->condition = '`post`.`user_id`=\''.$user->id.'\'';
+		$pages=new CPagination(Post::model()->count($criteria));
+		$pages->pageSize=4;
+		$pages->applyLimit($criteria);
+		$user->post = Post::model()->with('parsecache')->findAll($criteria);
+		
+		$this->render('show', compact('user', 'pages'));
 	}
 
 	public function actionCreate() {

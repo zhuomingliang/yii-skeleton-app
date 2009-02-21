@@ -26,9 +26,17 @@ $username = CHtml::encode($user->username); //cache the encoding
 <?php } ?>
 
 <h4>Posts by <?php echo $username; ?></h4>
-<?php foreach($user->post as $n=>$post): ?>
+<?php
+foreach($user->post as $n=>$post){ ?>
+<div class="post">
 <h4><?php echo CHtml::link($post->title,array('post/show','id'=>$post->id)); ?></h4>
 <p class="summary">
 On <?php echo Time::nice($post->created); ?>
 </p>
-<?php endforeach; ?>
+<div class="markdown">
+<?php echo $post->getCache('content'); ?>
+</div>
+</div>
+<?php }
+$this->widget('CLinkPager',array('pages'=>$pages));
+?>
