@@ -39,7 +39,10 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	 * Returns relation needed for model
 	 */
 	public function parseCacheRelation() {
-		return array(CActiveRecord::HAS_MANY, 'ParseCache', 'id', 'on'=>'`table`=\''.$this->Owner->tableName().'\'');	
+		return array(
+			CActiveRecord::HAS_MANY, 'ParseCache', 'id',
+			'on'=>'`table`=\''.$this->Owner->tableName().'\'',
+		);	
 	}
 	
 	/**
