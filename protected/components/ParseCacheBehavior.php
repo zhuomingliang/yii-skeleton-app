@@ -1,10 +1,10 @@
 <?php
 class ParseCacheBehavior extends CActiveRecordBehavior {
 	/**
-	* The name of the method in model used to parse column.  Signature must be
+	* The name of the method in model used to parse the attributes.  Signature must be
 	*
-	* public function <methodName>($column) {
-	* 	return <parsed $column>;
+	* public function <methodName>($attribute) {
+	* 	return <parsed $attribute>;
 	* }
 	*	
 	* Defaults to 'parseMarkdown', which is a method contained in this behavior
@@ -13,19 +13,19 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	public $parserMethod = 'parseMarkdown';
 	
 	/**
-	* Array of columns to cache
+	* Array of attributes to cache
 	*/
-	public $columns = array();
+	public $attributes = array();
 
 	/**
-	* Suffix of the column that the parsed column is stored in.
+	* Suffix of the attribute that the parsed attribute is stored in.
 	*/
 	public $suffix = 'Parsed';
 	
 	/**
 	* Whether to perform the parsing/caching in beforeValidate(). This is often
 	* wanted.  If set to false, it will instead parse it in beforeSave.  You can also of course
-	* perform the parsing/caching anywhere you want by calling cacheColumns()
+	* perform the parsing/caching anywhere you want by calling parseAttributes()
 	* Defaults to true.
 	*/
 	public $parseBeforeValidate = true;
@@ -35,16 +35,16 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	
 	public function beforeValidate($scenario) {
 		if (!$this->parsed && $this->parseBeforeValidate)
-			$this->parseColumns();
+			$this->parseAttributes();
 		return true;
 	}
 	
 	/**
 	* Parses data with Markdown and HTMLPurifier
 	*/
-    public function parseMarkdown($column) {
+    public function parseMarkdown($attribute) {
     	$parser = $this->getMarkdownParser();
-		return $parser->safeTransform($this->Owner->{$column});
+		return $parser->safeTransform($this->Owner->{$attribute});
 	}
 	protected function getMarkdownParser() {
 		if($this->_markdownParser===null)
@@ -53,15 +53,15 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	}
 	
 	/**
-	* Gets parsed/cached $column.  If it is not parsed yet it will parse the original content and cache it
+	* Gets parsed/cached $attribute.  If it is not parsed yet it will parse the original content and cache it
 	* It may not be parsed already if you installed this behavior after some data was already entered
 	*/
-	public function getParsed($column) {
-		$attributeParsed = $column.$this->suffix;
-		if (empty($this->Owner->{$attributeParsed}) && !empty($this->Owner->{$column})) {
+	public function getParsed($attribute) {
+		$attributeParsed = $attribute.$this->suffix;
+		if (empty($this->Owner->{$attributeParsed}) && !empty($this->Owner->{$attribute})) {
 			//not parsed
 			//could be because data was put into the table manually and not with app
-			$attributes = $this->columns;
+			$attributes = $this->attributes;
 			array_walk($attributes, 'ParseCacheBehavior::addSuffixes', $this->suffix);
 			$this->Owner->save(false, $attributes);
 		}
@@ -70,18 +70,18 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	protected static function addSuffixes(&$value, $key, $suffix){
 	    $value .= $suffix;
 	}
-	public function parseColumns() {
+	public function parseAttributes() {
 		$this->parsed = true;
 		
-		foreach ($this->columns as $column) {
-			$attributeParsed = $column.$this->suffix;
-			$this->Owner->{$attributeParsed} = $this->Owner->{$this->parserMethod}($column);
+		foreach ($this->attributes as $attribute) {
+			$attributeParsed = $attribute.$this->suffix;
+			$this->Owner->{$attributeParsed} = $this->Owner->{$this->parserMethod}($attribute);
 		}
 	}
 
 	public function beforeSave($event) {
 		if (!$this->parsed)
-			$this->parseColumns();
+			$this->parseAttributes();
 	}
 	
 }

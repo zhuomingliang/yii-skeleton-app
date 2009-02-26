@@ -24,7 +24,7 @@ class User extends ActiveRecord
 		return array(
 			'ParseCacheBehavior' => array(
 				'class' => 'application.components.ParseCacheBehavior',
-				'columns' => array('about'),
+				'attributes' => array('about'),
 			),
 			'AutoTimestampBehavior' => array(
 				'class' => 'application.components.AutoTimestampBehavior',
