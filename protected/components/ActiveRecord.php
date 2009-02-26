@@ -27,8 +27,8 @@ class ActiveRecord extends CActiveRecord
 		return array_unique($safe);
 	}
 	
-	public function getCache($column) {
+	public function getParsed($column) {
 		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
-		return parent::getCache($column);
+		return parent::getParsed($column);
 	}
 }
