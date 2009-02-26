@@ -16,98 +16,72 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	* Array of columns to cache
 	*/
 	public $columns = array();
+
+	/**
+	* Suffix of the column that the parsed column is stored in.
+	*/
+	public $suffix = 'Parsed';
 	
 	/**
 	* Whether to perform the parsing/caching in beforeValidate(). This is often
-	* wanted if for instance you have a "post preview" module.  You can also of course
-	* perform the parsing/caching anywhere you want by calling $this->cacheColumns()
-	* Defaults to false.
+	* wanted.  If set to false, it will instead parse it in beforeSave.  You can also of course
+	* perform the parsing/caching anywhere you want by calling cacheColumns()
+	* Defaults to true.
 	*/
-	public $cacheBeforeValidate = false;
+	public $parseBeforeValidate = true;
 	
-	protected $caches = array();
-	protected $cached = false;
+	protected $parsed = false;
 	protected $_markdownParser = null;
 	
 	public function beforeValidate($scenario) {
-		if (!$this->cached && $this->cacheBeforeValidate)
-			$this->cacheColumns();
+		if (!$this->parsed && $this->parseBeforeValidate)
+			$this->parseColumns();
 		return true;
 	}
 	
 	/**
-	 * Returns relation needed for model
-	 */
-	public function parseCacheRelation() {
-		return array(
-			CActiveRecord::HAS_MANY, 'ParseCache', 'id',
-			'on'=>'`table`=\''.$this->Owner->tableName().'\'',
-		);	
-	}
-	
-	/**
-	* Parses cache with Markdown and HTMLPurifier
+	* Parses data with Markdown and HTMLPurifier
 	*/
     public function parseMarkdown($column) {
     	$parser = $this->getMarkdownParser();
 		return $parser->safeTransform($this->Owner->{$column});
 	}
-	public function getMarkdownParser() {
+	protected function getMarkdownParser() {
 		if($this->_markdownParser===null)
 			$this->_markdownParser = new CMarkdownParser;
 		return $this->_markdownParser;
 	}
 	
 	/**
-	* Gets parsed/caches $column.  If it is not loaded from the database already it will
-	* load it.  You may use eager loading as usual with "with()", which will be more
-	* optimal in some cases
+	* Gets parsed/cached $column.  If it is not parsed yet it will parse the original content and cache it
+	* It may not be parsed already if you installed this behavior after some data was already entered
 	*/
-	public function getCache($column) {
-		if (!isset($this->caches[$column])) {
-			$this->caches[$column] = ParseCache::model()->find("`table`='".$this->Owner->tableName()."' AND `id`=".$this->Owner->id." AND `column`='".$column."'");
-			if (!$this->caches[$column]) {
-				//cache not in database
-				//could be because data was put into the table manually and not with app
-				$parseCache = new ParseCache;
-				$parseCache->table = $this->Owner->tableName();
-				$parseCache->id = $this->Owner->id;
-				$parseCache->column = $column;
-				$parseCache->content = $this->Owner->{$this->parserMethod}($column);
-				$this->caches[$column] = $parseCache;
-				$this->caches[$column]->save(false);
-			}
+	public function getParsed($column) {
+		$attributeParsed = $column.$this->suffix;
+		if (empty($this->Owner->{$attributeParsed}) && !empty($this->Owner->{$column})) {
+			//not parsed
+			//could be because data was put into the table manually and not with app
+			$attributes = $this->columns;
+			array_walk($attributes, 'ParseCacheBehavior::addSuffixes', $this->suffix);
+			$this->Owner->save(false, $attributes);
 		}
-		return $this->caches[$column]->content;
+		return $this->Owner->{$attributeParsed};
 	}
-	public function cacheColumns() {
-		$this->cached = true;
+	protected static function addSuffixes(&$value, $key, $suffix){
+	    $value .= $suffix;
+	}
+	public function parseColumns() {
+		$this->parsed = true;
 		
 		foreach ($this->columns as $column) {
-			$this->caches[$column] = new ParseCache;
-			$this->caches[$column]->table = $this->Owner->tableName();
-			$this->caches[$column]->id = $this->Owner->id;
-			$this->caches[$column]->column = $column;
-			$this->caches[$column]->content = $this->Owner->{$this->parserMethod}($column);
+			$attributeParsed = $column.$this->suffix;
+			$this->Owner->{$attributeParsed} = $this->Owner->{$this->parserMethod}($column);
 		}
 	}
-	public function afterFind($event) {
-		if ($this->Owner->hasRelated('parsecache')) {
-			foreach ($this->Owner->parsecache as $cache) {
-				$this->caches[$cache->column] = $cache;
-			}
-		}
-	}
-	public function afterSave($event) {
-		if (!$this->cached)
-			$this->cacheColumns();
-		
-		if (!$this->Owner->isNewRecord)
-			ParseCache::model()->deleteAll("`table`='".$this->Owner->tableName()."' AND `id`=".$this->Owner->id);
 
-		foreach ($this->caches as $column => $cache) {
-			$cache->save(false);
-		}
+	public function beforeSave($event) {
+		if (!$this->parsed)
+			$this->parseColumns();
 	}
 	
 }

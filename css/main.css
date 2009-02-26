@@ -35,6 +35,10 @@ p {padding:0; margin: 5px 0 0 0;}
 	padding: 0 0 5px 8px;
 	margin: 15px 0 0 5px;
 }
+.textedit {
+	background: #FFFFE1;
+}
+.textedit textarea {min-height: 50px; overflow-y: scroll;}
 #page
 {
 	width: 750px;

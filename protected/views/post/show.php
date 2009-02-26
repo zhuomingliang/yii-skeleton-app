@@ -26,7 +26,7 @@ if ($post->modified) {
 </p>
 
 <div class="markdown">
-<?php echo $post->getCache('content'); ?>
+<?php echo $post->getParsed('content'); ?>
 </div>
 </div>
 

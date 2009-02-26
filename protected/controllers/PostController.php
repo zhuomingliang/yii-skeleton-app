@@ -111,7 +111,7 @@ class PostController extends Controller
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
 
-		$posts=Post::model()->with('user', 'parsecache')->together()->findAll($criteria);
+		$posts=Post::model()->with('user')->together()->findAll($criteria);
 
 		$this->render('list', compact('posts','pages'));
 	}

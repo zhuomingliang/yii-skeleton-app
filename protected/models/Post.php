@@ -42,7 +42,6 @@ class Post extends ActiveRecord
 	public function relations()
 	{
 		return array(
-			'parsecache' => $this->parseCacheRelation(),
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}

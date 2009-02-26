@@ -21,10 +21,11 @@ $username = CHtml::encode($user->username); //cache the encoding
 <?php if (!empty($user->about)) { ?>
 	<h3>About <?php echo $username; ?></h3>
 	<div class="markdown">
-	<?php echo $user->getCache('about'); ?>
+	<?php echo $user->getParsed('about'); ?>
 	</div>
-<?php } ?>
-
+<?php }
+if (!empty($user->post)) {
+?>
 <h4>Posts by <?php echo $username; ?></h4>
 <?php
 foreach($user->post as $n=>$post){ ?>
@@ -34,9 +35,10 @@ foreach($user->post as $n=>$post){ ?>
 On <?php echo Time::nice($post->created); ?>
 </p>
 <div class="markdown">
-<?php echo $post->getCache('content'); ?>
+<?php echo $post->getParsed('content'); ?>
 </div>
 </div>
 <?php }
 $this->widget('CLinkPager',array('pages'=>$pages));
 ?>
+<?php } ?>

@@ -80,7 +80,7 @@ class UserController extends Controller {
 		$pages=new CPagination(Post::model()->count($criteria));
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
-		$user->post = Post::model()->with('parsecache')->together()->findAll($criteria);
+		$user->post = Post::model()->findAll($criteria);
 			
 		$this->render('show', compact('user', 'pages'));
 	}

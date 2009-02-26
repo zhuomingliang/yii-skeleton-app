@@ -19,7 +19,7 @@ By <?php echo CHtml::link(CHtml::encode($post->user->username), array('user/show
 on Created on <?php echo Time::nice($post->created); ?>
 </p>
 <div class="markdown">
-<?php echo $post->getCache('content'); ?>
+<?php echo $post->getParsed('content'); ?>
 </div>
 </div>
 <?php } ?>

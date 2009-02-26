@@ -99,7 +99,6 @@ class User extends ActiveRecord
 	
 	public function relations() {
 		return array(
-			'parsecache' => $this->parseCacheRelation(),
 			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
 			'post' => array(self::HAS_MANY, 'Post', 'user_id'),
 		);
