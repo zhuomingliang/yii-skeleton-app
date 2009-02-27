@@ -28,13 +28,12 @@ class ActiveRecord extends CActiveRecord
 	}
 	
 	public function getMarkdown($column, $userCss = true) {
-		if ($userCss) {
-			Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
-			echo '<div class="markdown">';
-		}
-		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/highlight.css');
-		return $this->getParsed($column);
 		if ($userCss)
-			echo '</div>';
+			Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
+		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/highlight.css');
+		if ($userCss)
+			return $this->getParsed($column);
+		else
+			return '<div class="markdown">'.$this->getParsed($column).'</div>';
 	}
 }
