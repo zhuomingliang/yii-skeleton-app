@@ -10,7 +10,7 @@ $this->widget('application.components.Menu',array('items'=>$items));
 ?>
 <?php foreach($posts as $n=>$post) { ?>
 <div class="post">
-<h4><?php echo CHtml::link($post->title,array('show','id'=>$post->id)); ?></h4>
+<h3><?php echo CHtml::link($post->title,array('show','id'=>$post->id)); ?></h3>
 <p class="summary">
 By <?php echo CHtml::link(CHtml::encode($post->user->username), array('user/show', 'id'=>$post->user->id)); ?> 
 on Created on <?php echo Time::nice($post->created); ?>

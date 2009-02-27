@@ -4,8 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
 <?php
+echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/reset.css');
+echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/typography.css');
 echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/main.css');
 echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
+//echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/ie.css');
 ?>
 <title><?php echo $this->pageTitle; ?></title>
 </head>

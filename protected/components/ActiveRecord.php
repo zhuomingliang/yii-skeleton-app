@@ -32,8 +32,8 @@ class ActiveRecord extends CActiveRecord
 			Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
 		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/highlight.css');
 		if ($userCss)
-			return $this->getParsed($column);
-		else
 			return '<div class="markdown">'.$this->getParsed($column).'</div>';
+		else
+			return $this->getParsed($column);
 	}
 }

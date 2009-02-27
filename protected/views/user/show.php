@@ -28,7 +28,7 @@ if (!empty($user->post)) {
 <?php
 foreach($user->post as $n=>$post){ ?>
 <div class="post">
-<h4><?php echo CHtml::link($post->title,array('post/show','id'=>$post->id)); ?></h4>
+<h3><?php echo CHtml::link($post->title,array('post/show','id'=>$post->id)); ?></h3>
 <p class="summary">
 On <?php echo Time::nice($post->created); ?>
 </p>

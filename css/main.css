@@ -1,40 +1,23 @@
 /* begin overall style */
 body
 {
-	margin: 0;
-	padding: 0;
-	background: white;
-	color: #222;
-	font: normal 10pt Arial,Helvetica,sans-serif;
 	background:white url(bg.gif) repeat-x left top;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	padding: 0;
-	margin: 0;
-	font-weight: normal;
-}
-h5, h6 {
-	font-weight: bold;
-}
-h1 { font-size: 200%; padding-top: 0.8em;}
-h2 { font-size: 150%; padding-top: 0.5em;}
-h3 { font-size: 130%; padding-top: 0.5em;}
-h4 { font-size: 120%; padding-top: 0.5em;}
-h5 { font-size: 110%; padding-top: 0.3em;}
-p {padding:0; margin: 5px 0 0 0;}
 .summary {
 	font-size: 80%;
 	color: #525252;
-	margin: 0 0 5px 0;
+	margin: 0 0 10px 0;
 	padding: 0;
 }
 .post {
 	background: #F5F5F5;
 	border-left: 2px solid #DDD;
-	padding: 0 0 5px 8px;
+	padding: 5px 0 5px 8px;
 	margin: 15px 0 0 5px;
 }
+.post h2 { margin-bottom: 0; }
+.post h3 { margin-bottom: 0; }
 .textedit {
 	background: #FFFFE1;
 }
@@ -103,7 +86,7 @@ p {padding:0; margin: 5px 0 0 0;}
 {
 	padding: 15px;
 	margin: 20px 0 0 0;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	text-align: center;
 	border-top: 1px solid #EEE;
 }
@@ -120,7 +103,6 @@ table.dataGrid
 
 table.dataGrid th, table.dataGrid td
 {
-	font-size: 0.9em;
 	border: 1px #4F81BD solid;
 	padding: 0.3em;
 }
