@@ -115,7 +115,22 @@ class PostController extends Controller
 
 		$this->render('list', compact('posts','pages'));
 	}
+	/**
+	 * Example of a news page - just pull posts from admin users.
+	 * You may want to modify it to only pull posts under a 'news' category
+	 */
+	public function actionNews()
+	{
+		$criteria=new CDbCriteria;
+		$criteria->condition = '`group_id` IN ('.Group::ADMIN.','.Group::SITE_ADMIN.')';
+		$pages=new CPagination(Post::model()->with('user')->count($criteria));
+		$pages->pageSize=4;
+		$pages->applyLimit($criteria);
 
+		$posts=Post::model()->with('user')->together()->findAll($criteria);
+
+		$this->render('list', compact('posts','pages'));
+	}
 	/**
 	 * Manages all posts.
 	 */
