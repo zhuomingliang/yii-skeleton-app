@@ -129,7 +129,7 @@ class PostController extends Controller
 
 		$posts=Post::model()->with('user')->together()->findAll($criteria);
 
-		$this->render('list', compact('posts','pages'));
+		$this->render('news', compact('posts','pages'));
 	}
 	/**
 	 * Manages all posts.

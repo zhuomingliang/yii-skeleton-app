@@ -9,7 +9,7 @@ rem -------------------------------------------------------------
 
 set BIN_PATH=%~dp0
 
-if "%PHP_COMMAND%" == "" set PHP_COMMAND=C:\wamp\bin\php\php5.2.5\php.exe
+if "%PHP_COMMAND%" == "" set PHP_COMMAND=C:\wamp\bin\php\php5.2.8\php.exe
 
 %PHP_COMMAND% "%BIN_PATH%yiic" %*
 
