@@ -27,8 +27,14 @@ class ActiveRecord extends CActiveRecord
 		return array_unique($safe);
 	}
 	
-	public function getParsed($column) {
-		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
-		return parent::getParsed($column);
+	public function getMarkdown($column, $userCss = true) {
+		if ($userCss) {
+			Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
+			echo '<div class="markdown">';
+		}
+		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/highlight.css');
+		return $this->getParsed($column);
+		if ($userCss)
+			echo '</div>';
 	}
 }

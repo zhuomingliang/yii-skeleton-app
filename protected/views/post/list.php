@@ -18,9 +18,9 @@ $this->widget('CLinkPager',array('pages'=>$pages));
 By <?php echo CHtml::link(CHtml::encode($post->user->username), array('user/show', 'id'=>$post->user->id)); ?> 
 on Created on <?php echo Time::nice($post->created); ?>
 </p>
-<div class="markdown">
-<?php echo $post->getParsed('content'); ?>
-</div>
+
+<?php echo $post->getMarkdown('content'); ?>
+
 </div>
 <?php } ?>
 <br/>

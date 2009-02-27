@@ -8,9 +8,7 @@
 </div>
 <?php } else { ?>
 
-<p>
-If you have business inquries or other questions, please fill out the following form to contact us. Thank you.
-</p>
+<?php $this->widget('application.modules.TextEdit.components.TextEditor', array('id'=>'contact')); ?>
 
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>

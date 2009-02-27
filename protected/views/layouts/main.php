@@ -38,9 +38,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 </div><!-- content -->
 
 <div id="footer">
-Copyright &copy; 2008 by My Company.<br/>
-All Rights Reserved.<br/>
-<?php echo Yii::powered(); ?>
+<?php $this->widget('application.modules.TextEdit.components.TextEditor', array('id'=>'footer')); ?>
 </div><!-- footer -->
 
 </div><!-- page -->

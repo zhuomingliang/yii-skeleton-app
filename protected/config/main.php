@@ -14,6 +14,7 @@ return array(
 		'application.extensions.*',
 	),
 	'preload'=>array('log'),
+	'modules'=>array('TextEdit'),
 	// application components
 	'components'=>array(
 		'db'=>array(
@@ -42,7 +43,7 @@ return array(
 				),
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'error, warning, watch',
 					'categories'=>'system.*',
 				),
 			),

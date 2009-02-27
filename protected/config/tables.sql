@@ -1,8 +1,9 @@
 -- --------------------------------------------------------
 -- Please run!
--- Creates table structures and fake users (for testing)
--- Also creates an admin account (login with:     username: admin    password: admin)
+-- Creates table structures and needed data.
+-- Also creates an admin account (login with: username: admin    password: admin)
 --
+-- For testing data, see other sql files
 --
 --
 -- Table structure for table `group`
@@ -42,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `notify_comments` tinyint(1) NOT NULL DEFAULT '1',
   `notify_messages` tinyint(1) NOT NULL DEFAULT '1',
   `about` text NOT NULL,
+  `aboutParsed` text NOT NULL,
   `group_id` int(11) NOT NULL DEFAULT '2',
   `email_confirmed` char(21) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
@@ -68,6 +70,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `user_id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
   `content` text NOT NULL,
+  `contentParsed` text NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -79,16 +82,22 @@ CREATE TABLE IF NOT EXISTS `post` (
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
 --
--- Table structure for table `parsecache`
--- You need this if you plan on using the ParseCacheBehavior
+-- Table structure for table `textedit`
 --
 
-CREATE TABLE IF NOT EXISTS `parsecache` (
-  `table` varchar(20) NOT NULL,
-  `id` int(11) NOT NULL,
-  `column` varchar(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `textedit` (
+  `namedId` varchar(50) NOT NULL,
   `content` text NOT NULL,
-  PRIMARY KEY (`table`,`id`,`column`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+  `contentParsed` text NOT NULL,
+  PRIMARY KEY (`namedId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Data for table `textedit` - REQUIRED
+--
+
+INSERT INTO `textedit` (`namedId`, `content`) VALUES
+('contact', 'If you have business inquires or other questions, please fill out the following form to contact us. Thank you.'),
+('footer', 'Copyright &copy; 2008 by My Company.\n<br />\nAll Rights Reserved.\n<br />\nPowered by <a href="http://www.yiiframework.com/">Yii Framework</a>.'),
+('home1', '# Yii Skeleton Application\nNote: Usually requires nightly build of Yii\n\n### Features:\n\n* User management\n     1. Login/logout\n     2. Registration\n     3. Email verification\n     4. Administrative functions\n     5. User list (using ajax pagination)\n     6. User recovery\n* User groups\n     1. Group authorization \n* Extensions\n     1. Email\n     2. Time Helper\n     3. Logable Behavior\n     4. Parse Cache Behavior \n* Extended access control (or rather simplified)\n* Contact page\n* Logging and clean urls configured \n\n### Checklist for installing:\n\n* Edit paths in `index.php` as necessary\n* Set up database in the `main.php` config file\n* Run sql in the `protected/config/tables.sql`\n* Optionally load mysql test data in `protected/config/`\n* Login as admin with `username=admin`, `password=admin`\n\n## Links\n* [Yii Forum Thread](http://www.yiiframework.com/forum/index.php/topic,799.0.html)\n* [SVN at google code](http://code.google.com/p/yii-skeleton-app/)');

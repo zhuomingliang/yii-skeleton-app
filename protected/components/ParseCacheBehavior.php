@@ -11,7 +11,7 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	* Please see parseMarkdown() for an example if you wish to use your own method
 	*/
 	public $parserMethod = 'parseMarkdown';
-	
+	public $safeTransform = true;
 	/**
 	* Array of attributes to cache
 	*/
@@ -44,7 +44,10 @@ class ParseCacheBehavior extends CActiveRecordBehavior {
 	*/
     public function parseMarkdown($attribute) {
     	$parser = $this->getMarkdownParser();
-		return $parser->safeTransform($this->Owner->{$attribute});
+    	if ($this->safeTransform)
+			return $parser->safeTransform($this->Owner->{$attribute});
+		else
+			return $parser->transform($this->Owner->{$attribute});
 	}
 	protected function getMarkdownParser() {
 		if($this->_markdownParser===null)
