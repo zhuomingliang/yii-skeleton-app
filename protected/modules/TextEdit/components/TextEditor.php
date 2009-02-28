@@ -45,8 +45,8 @@ class TextEditor extends CWidget
 			return;
 		$this->registeredScript = true;
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.jeditable.mini.js');
-		$controllerProcess = CHtml::normalizeUrl(array('TextEdit/textedit/process'));
-		$controllerLoadRaw = CHtml::normalizeUrl(array('TextEdit/textedit/loadRaw'));
+		$controllerProcess = CHtml::normalizeUrl(array('TextEdit/TextEdit/process'));
+		$controllerLoadRaw = CHtml::normalizeUrl(array('TextEdit/TextEdit/loadRaw'));
 		$script = <<<EOD
 		$('.textedit').editable('$controllerProcess', {
 			loadurl: '$controllerLoadRaw',
