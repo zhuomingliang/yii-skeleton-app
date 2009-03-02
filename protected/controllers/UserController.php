@@ -61,7 +61,7 @@ class UserController extends Controller {
 			'user.email_confirmed'=>'email_confirmed',
 		);
 		$sort->applyOrder($criteria);
-		
+		$criteria->order = '`created` DESC';
 		$users=User::model()->with('group')->findAll($criteria);
 		
 		//The user list supports AJAX.  Not sure if this is a good thing in this case,
@@ -80,6 +80,7 @@ class UserController extends Controller {
 		$pages=new CPagination(Post::model()->count($criteria));
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
+		$criteria->order = '`post`.`created` DESC';
 		$user->post = Post::model()->findAll($criteria);
 			
 		$this->render('show', compact('user', 'pages'));

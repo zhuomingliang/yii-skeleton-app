@@ -110,7 +110,7 @@ class PostController extends Controller
 		$pages=new CPagination(Post::model()->count($criteria));
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
-
+		$criteria->order = '`post`.`created` DESC';
 		$posts=Post::model()->with('user')->together()->findAll($criteria);
 
 		$this->render('list', compact('posts','pages'));
@@ -126,7 +126,7 @@ class PostController extends Controller
 		$pages=new CPagination(Post::model()->with('user')->count($criteria));
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
-
+		$criteria->order = '`post`.`created` DESC';
 		$posts=Post::model()->with('user')->together()->findAll($criteria);
 
 		$this->render('news', compact('posts','pages'));
@@ -146,7 +146,7 @@ class PostController extends Controller
 
 		$sort=new CSort('Post');
 		$sort->applyOrder($criteria);
-
+		$criteria->order = '`post`.`created` DESC';
 		$postList=Post::model()->findAll($criteria);
 
 		$this->render('admin', compact('postList',	'pages', 'sort'));
