@@ -61,7 +61,7 @@ class UserController extends Controller {
 			'user.email_confirmed'=>'email_confirmed',
 		);
 		$sort->applyOrder($criteria);
-		$criteria->order = '`created` DESC';
+		$criteria->order = '`user`.`created` DESC';
 		$users=User::model()->with('group')->findAll($criteria);
 		
 		//The user list supports AJAX.  Not sure if this is a good thing in this case,
