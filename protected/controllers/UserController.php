@@ -103,18 +103,20 @@ class UserController extends Controller {
 	}
 
 	public function actionUpdate() {
+
 		$id = isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id;
 		
 		if ((!Yii::app()->user->hasAuth(Group::ADMIN)) && ($id != Yii::app()->user->id))
 			throw new CHttpException(404, 'Permission Denied');
 
 		$user = $this->loadUser($id);
-		
 		if (isset($_POST['User'])) {
-			$oldEmail = $user->email;
-			$user->setAttributes($_POST['User'], 'update');
+			$scenario = Yii::app()->user->hasAuth(Group::ADMIN) ? 'updateAdmin' : 'update';
 
-			if ($user->validate('update')) {
+			$oldEmail = $user->email;
+			$user->setAttributes($_POST['User'], $scenario);
+
+			if ($user->validate($scenario)) {
 				$redirect = array('show', 'id'=>$id);
 				
 				//email logic

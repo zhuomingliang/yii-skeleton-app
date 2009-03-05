@@ -39,10 +39,10 @@ class User extends ActiveRecord
 		return array(
 			array('username, password', 'length', 'max'=>35, 'min'=>3),
 			array('about', 'length', 'max' => 5000),
-			array('username', 'unique', 'on' => 'register'),
+			array('username', 'unique', 'caseSensitive'=>false, 'on' => 'register'),
 			
 			array('password', 'authenticatePass', 'on' => 'login'),
-			array('password', 'compare', 'on' => 'register, update'),
+			array('password', 'compare', 'on' => 'register, update, updateAdmin'),
 			
 			array('email', 'length', 'max' => 40),
 			array('email', 'email'),
@@ -51,8 +51,9 @@ class User extends ActiveRecord
 			
 			array('email', 'required', 'on' => 'recover'),
 			
-			array('email, email_visible, notify_comments, notify_messages', 'required', 'on' => 'update'),
+			array('email, email_visible, notify_comments, notify_messages', 'required', 'on' => 'update, updateAdmin'),
 			array('email_visible, notify_comments, notify_messages', 'in', 'range' => array('0','1')),
+			array('group_id', 'application.models.validators.EUniquenessValidator', 'model'=>'Group', 'on' => 'updateAdmin'),
 			
 			array('group_id', 'numerical', 'integerOnly' => true),
 		);
@@ -62,6 +63,7 @@ class User extends ActiveRecord
 		return array(
 			//parent::safeAttributes(),
 			'update'=>'about, password, password_repeat',
+			'updateAdmin'=>'about, password, password_repeat, group_id',
 			'login'=>'username, password, rememberMe',
 		);
 	}

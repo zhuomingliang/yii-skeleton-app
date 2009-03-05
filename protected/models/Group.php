@@ -26,5 +26,11 @@ class Group extends ActiveRecord
 			array('name', 'required'),
 		);
 	}
+	
+	public function getListed() {
+		$a = $this->findAll();
+		unset($a[0]); //removes "not logged in" level
+		return $a;
+	}
 
 }

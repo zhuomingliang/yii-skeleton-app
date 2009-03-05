@@ -40,7 +40,12 @@ You may enter content using <?php echo CHtml::link('Markdown syntax', 'http://da
 <?php echo CHtml::activeLabel($user,'notify_messages'); ?>
 <?php echo CHtml::activeCheckBox($user,'notify_messages'); ?>
 </div>
-
+<?php if (Yii::app()->user->hasAuth(Group::ADMIN)) { ?>
+<div class="simple">
+<?php echo CHtml::activeLabel($user, 'group_id'); ?>
+<?php echo CHtml::activeDropDownList($user, 'group_id', CHtml::listData(Group::model()->getListed(), 'id', 'name')); ?>
+</div>
+<?php } ?>
 <div class="action">
 <?php echo CHtml::submitButton('Save'); ?>
 </div>
