@@ -4,7 +4,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name' => 'Yii Skeleton Application',
 	'defaultController'=>'site',
 	
 	// autoloading model and component classes
@@ -17,6 +17,10 @@ return array(
 	'modules'=>array('textedit'),
 	// application components
 	'components'=>array(
+//		'session' => array(
+//			'class' => 'system.web.CDbHttpSession',
+//			'connectionID' => 'db',
+//		),
 		'db'=>array(
 			'class'=>'CDbConnection',
 			'connectionString'=>'mysql:host=localhost;dbname=yiitestdrive',

@@ -14,12 +14,12 @@ class EUniquenessValidator extends CValidator
 	public $allowEmpty=true;
 	
 	/**
-	 * @var string The model
+	 * @var string The model to check whether the attribute value is contained in
 	 */
 	public $model=null;
 	
 	/**
-	 * @var string The attribute to look for.  Defaults to 'id'
+	 * @var string The attribute in the foreign model that we are searching under.  Defaults to 'id'
 	 */
 	public $attribute='id';
 	
