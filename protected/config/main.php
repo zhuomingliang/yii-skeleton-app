@@ -14,7 +14,7 @@ return array(
 		'application.extensions.*',
 	),
 	'preload'=>array('log'),
-	'modules'=>array('TextEdit'),
+	'modules'=>array('textedit'),
 	// application components
 	'components'=>array(
 		'db'=>array(
@@ -52,6 +52,7 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName' => false,
+			//'caseSensitive'=>false,
 			'rules'=>array(
 				'user/register/*'=>'user/create',
 				'user/settings/*'=>'user/update',

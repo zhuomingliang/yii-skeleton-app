@@ -22,7 +22,7 @@ class TextEditor extends CWidget
 	 */
 	public function init()
 	{
-		Yii::import('TextEdit.models.*');
+		Yii::import('textedit.models.*');
 		$model = TextEdit::model()->find("`namedId`='{$this->id}'");
 		if (!Yii::app()->user->hasAuth(Group::ADMIN)) {
 			if ($model)
@@ -45,8 +45,8 @@ class TextEditor extends CWidget
 			return;
 		$this->registeredScript = true;
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.jeditable.mini.js');
-		$controllerProcess = CHtml::normalizeUrl(array('TextEdit/TextEdit/process'));
-		$controllerLoadRaw = CHtml::normalizeUrl(array('TextEdit/TextEdit/loadRaw'));
+		$controllerProcess = CHtml::normalizeUrl(array('textedit/textedit/process'));
+		$controllerLoadRaw = CHtml::normalizeUrl(array('textedit/textedit/loadraw'));
 		$script = <<<EOD
 		$('.textedit').editable('$controllerProcess', {
 			loadurl: '$controllerLoadRaw',
