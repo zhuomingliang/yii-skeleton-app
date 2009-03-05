@@ -35,7 +35,7 @@ class EUniquenessValidator extends CValidator
 		if($this->allowEmpty && ($value===null || $value===''))
 			return;
 
-		eval("\$column = {$this->model}::model()->getTableSchema()->getColumn(\$this->attribute);");
+		$column = call_user_func(array($this->model, 'model'))->getTableSchema()->getColumn($this->attribute);
 		if($column===null)
 			throw new CException(Yii::t('yii', '{model} does not have attribute "{this->attribute}".',
 				array('{class}'=>$this->model, '{attribute}'=>$this->attribute)));
@@ -46,7 +46,7 @@ class EUniquenessValidator extends CValidator
 			'params'=>array(':value'=>$value),
 		);
 
-		eval("\$exists={$this->model}::model()->exists(\$criteria);");
+		$exists = call_user_func(array($this->model, 'model'))->exists($criteria);
 
 		if(!$exists)
 		{

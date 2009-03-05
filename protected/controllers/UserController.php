@@ -136,10 +136,8 @@ class UserController extends Controller {
 				
 				if ($user->save(false))
 					$this->redirect($redirect);
-
 			}
 		}
-		unset($user->password);
 		$this->render('update', compact('user'));
 	}
 	

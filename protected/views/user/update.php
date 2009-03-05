@@ -20,11 +20,11 @@ You may enter content using <?php echo CHtml::link('Markdown syntax', 'http://da
 </div>
 <div class="simple">
 <?php echo CHtml::activeLabel($user,'password'); ?>
-<?php echo CHtml::activePasswordField($user,'password'); ?>
+<?php echo CHtml::activePasswordField($user,'password', array('value'=>'')); ?>
 </div>
 <div class="simple">
 <?php echo CHtml::activeLabel($user,'password_repeat'); ?>
-<?php echo CHtml::activePasswordField($user,'password_repeat'); ?>
+<?php echo CHtml::activePasswordField($user,'password_repeat', array('value'=>'')); ?>
 </div>
 <div class="simple">
 <?php echo CHtml::activeLabel($user,'email_visible'); ?>
