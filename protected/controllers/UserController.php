@@ -60,10 +60,11 @@ class UserController extends Controller {
 			'user.created'=>'created',
 			'user.email_confirmed'=>'email_confirmed',
 		);
+
 		$sort->defaultOrder = '`user`.`created` DESC';
 		$sort->applyOrder($criteria);
 		$users=User::model()->with('group')->findAll($criteria);
-		
+
 		//The user list supports AJAX.  Not sure if this is a good thing in this case,
 		//but I'll leave it as an example
 		if (Yii::app()->request->isAjaxRequest)
