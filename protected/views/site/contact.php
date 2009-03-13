@@ -8,7 +8,7 @@
 </div>
 <?php } else { ?>
 
-<?php $this->widget('application.modules.TextEdit.components.TextEditor', array('id'=>'contact')); ?>
+<?php $this->widget('application.modules.textedit.components.TextEditor', array('id'=>'contact')); ?>
 
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>

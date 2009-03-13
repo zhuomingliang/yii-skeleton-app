@@ -23,7 +23,7 @@ class TextEditor extends CWidget
 	public function init()
 	{
 		Yii::import('textedit.models.*');
-		$model = TextEdit::model()->find("`namedId`='{$this->id}'");
+		$model = Textedit::model()->find("`namedId`='{$this->id}'");
 		if (!Yii::app()->user->hasAuth(Group::ADMIN)) {
 			if ($model)
 				echo $model->getMarkdown('content', false);

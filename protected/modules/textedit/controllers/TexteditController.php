@@ -23,8 +23,8 @@ class TexteditController extends Controller
 		//Yii::log(print_r($_POST, true), 'watch', 'system.web');
 		Yii::log(Yii::app()->user->name.' changed '.$_POST['id'], 'watch', 'system.web');
 		Yii::import('textedit.models.*');
-		$textedit = new TextEdit;
-		$textedit->isNewRecord = !TextEdit::model()->count("`namedId`='{$_POST['id']}'");
+		$textedit = new Textedit;
+		$textedit->isNewRecord = !Textedit::model()->count("`namedId`='{$_POST['id']}'");
 		$textedit->namedId = $_POST['id'];
 		$textedit->content = $_POST['value'];
 		$textedit->save(false);
@@ -33,7 +33,7 @@ class TexteditController extends Controller
 	public function actionLoadraw() {
 		//Yii::log($_GET['id'], 'watch', 'system.web');
 		Yii::import('textedit.models.*');
-		$model = TextEdit::model()->find("`namedId`='{$_GET['id']}'");
+		$model = Textedit::model()->find("`namedId`='{$_GET['id']}'");
 		if ($model)
 			echo $model->content;
 	}

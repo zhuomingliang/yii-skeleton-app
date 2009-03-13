@@ -42,7 +42,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 </div><!-- content -->
 
 <div id="footer">
-<?php $this->widget('application.modules.TextEdit.components.TextEditor', array('id'=>'footer')); ?>
+<?php $this->widget('application.modules.textedit.components.TextEditor', array('id'=>'footer')); ?>
 </div><!-- footer -->
 
 </div><!-- page -->
