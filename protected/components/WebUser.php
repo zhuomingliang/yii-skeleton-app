@@ -43,5 +43,34 @@ class WebUser extends CWebUser {
 		return $mapConditions[$comparison];
 	}
 	
+	/**
+	* @param string the id of the flash
+	* @param mixed you may set this argument to the name of the view file to imbed the flash in
+	* (you may access the flash contant in the view via $content), or an array of the form:
+	* array(<before>, <after>), where <before> is rendered before the flash and <after> after it.
+	* Or, you may leave it as null to wrap it in <p class="flash"></p> (the default)
+	* @param mixed value to be returned if the flash message is not available.
+	* @param boolean whether to delete this flash message after accessing it. Defaults to true.
+	* @param whether to return the flash or echo it.  Defaults to false (eg echo it)
+	* @return mixed the message message
+	*/
+	public function flash($id, $view=null, $defaultValue=null,$delete=true, $return=false) {
+		if (!$this->hasFlash($id))
+			return;
+			
+		$flash = $this->getFlash($id, $defaultValue, $delete);
+		
+		if ($view==null)
+			$buff = '<p class="flash">'.$flash.'</p>';
+		elseif (is_array($view))
+			$buff = $view[0].$flash.$view[1];
+		else
+			$buff = Yii::app()->controller->renderPartial('application.views.flash.'.$view, array('content'=>$flash), true);
+		
+		if ($return)
+			return $buff;
+		else
+			echo $buff;
+	}
 }
 ?>

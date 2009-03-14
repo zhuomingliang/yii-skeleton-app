@@ -1,10 +1,9 @@
 <h1>User Recovery</h1>
 
-<?php if(Yii::app()->user->hasFlash('recover')) { ?>
-<div class="confirmation">
-<?php echo Yii::app()->user->getFlash('recover'); ?>
-</div>
-<?php return;
+<?php
+if(Yii::app()->user->hasFlash('recover')) {
+	Yii::app()->user->flash('recover', array('<div class="confirmation">', '</div>'));
+	return;
 }
 ?>
 <p>

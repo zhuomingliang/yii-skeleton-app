@@ -2,13 +2,14 @@
 
 <h1>Contact Us</h1>
 
-<?php if(Yii::app()->user->hasFlash('contact')) { ?>
-<div class="confirmation">
-<?php echo Yii::app()->user->getFlash('contact'); ?>
-</div>
-<?php } else { ?>
+<?php
+if(Yii::app()->user->hasFlash('contact')) {
+	Yii::app()->user->flash('contact', array('<div class="confirmation">', '</div>'));
+	return;
+}
 
-<?php $this->widget('application.modules.textedit.components.TextEditor', array('id'=>'contact')); ?>
+$this->widget('application.modules.textedit.components.TextEditor', array('id'=>'contact'));
+?>
 
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>
@@ -50,4 +51,3 @@
 
 </form>
 </div><!-- yiiForm -->
-<?php } ?>
