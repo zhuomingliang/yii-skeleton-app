@@ -8,7 +8,7 @@ if(Yii::app()->user->hasFlash('contact')) {
 	return;
 }
 
-$this->widget('application.modules.textedit.components.TextEditor', array('id'=>'contact'));
+$this->widget('textedit.components.TextEditor', array('id'=>'contact'));
 ?>
 
 <div class="yiiForm">

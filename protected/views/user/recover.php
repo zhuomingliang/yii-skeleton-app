@@ -5,10 +5,8 @@ if(Yii::app()->user->hasFlash('recover')) {
 	Yii::app()->user->flash('recover', array('<div class="confirmation">', '</div>'));
 	return;
 }
+$this->widget('textedit.components.TextEditor', array('id'=>'userRecovery'));
 ?>
-<p>
-Forgot your username and/or password?  Not to worry.  Enter the email below that you used to create an account with and press "submit" and we will email your login credentials to you.
-</p>
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>
 

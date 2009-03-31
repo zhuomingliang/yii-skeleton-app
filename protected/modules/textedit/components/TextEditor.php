@@ -11,10 +11,10 @@ class TextEditor extends CWidget
 	* string unique id of the text editor
 	*/
 	public $id;
+	public $AR = null;
 	public $defaultMsg = '<b>Click here to enter text</b>';
 	
 	protected $model;
-	protected $registeredScript = false;
 	
 	/**
 	 * Initializes the widget.
@@ -22,16 +22,17 @@ class TextEditor extends CWidget
 	 */
 	public function init()
 	{
-		Yii::import('textedit.models.*');
-		$model = Textedit::model()->find("`namedId`='{$this->id}'");
+		Yii::app()->getModule('textedit');
+		//Yii::import('textedit.models.*');
+		$model = ($this->AR == null) ? Textedit::model()->find("`namedId`='{$this->id}'") : $this->AR;
 		if (!Yii::app()->user->hasAuth(Group::ADMIN)) {
 			if ($model)
 				echo $model->getMarkdown('content', false);
 			return;	
 		}
-		$this->registerScript();
 
-		echo '<div class="textedit" id="'.$this->id.'">';
+		$this->registerScript();
+		echo '<div class="textedit" id="textedit_'.$model->namedId.'">';
 		
 		if ($model)
 			echo $model->getMarkdown('content', false);
@@ -41,12 +42,12 @@ class TextEditor extends CWidget
 		echo '</div>';
 	}
 	protected function registerScript() {
-		if ($this->registeredScript)
+		if (Yii::app()->clientScript->isScriptRegistered('textedit', CClientScript::POS_READY))
 			return;
-		$this->registeredScript = true;
+
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/jquery.jeditable.mini.js');
-		$controllerProcess = CHtml::normalizeUrl(array('textedit/textedit/process'));
-		$controllerLoadRaw = CHtml::normalizeUrl(array('textedit/textedit/loadraw'));
+		$controllerProcess = CHtml::normalizeUrl(array('/textedit/textedit/process'));
+		$controllerLoadRaw = CHtml::normalizeUrl(array('/textedit/textedit/loadraw'));
 		$script = <<<EOD
 		$('.textedit').editable('$controllerProcess', {
 			loadurl: '$controllerLoadRaw',

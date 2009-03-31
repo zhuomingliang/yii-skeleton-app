@@ -1,1 +1,1 @@
-<?php $this->widget('application.modules.textedit.components.TextEditor', array('id'=>'home1')); ?>
+<?php $this->widget('textedit.components.TextEditor', array('id'=>'home1')); ?>

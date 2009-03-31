@@ -24,12 +24,13 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 <div id="mainmenu">
 <?php $this->widget('application.components.Menu',array(
 	'items'=>array(
-		array('Home', array('site/index')),
-		array('Contact', array('site/contact')),
-		array('Users', array('user/list')),
-		array('Posts', array('post/list')),
-		array('News Archive', array('post/news')),
-		array('Groups', array('group/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
+		array('Home', array('/site/index')),
+		array('Contact', array('/site/contact')),
+		array('Users', array('/user/list')),
+		array('Posts', array('/post/list')),
+		array('News Archive', array('/post/news')),
+		array('Groups', array('/group/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
+		array('TextEdit module', array('/textedit/admin/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
 	),
 	'view' => 'mainMenu'
 )); ?>
@@ -42,7 +43,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 </div><!-- content -->
 
 <div id="footer">
-<?php $this->widget('application.modules.textedit.components.TextEditor', array('id'=>'footer')); ?>
+<?php $this->widget('textedit.components.TextEditor', array('id'=>'footer')); ?>
 </div><!-- footer -->
 
 </div><!-- page -->
