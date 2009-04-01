@@ -1,5 +1,5 @@
 <div class="pager">
-<?php echo $this->widget('CLinkPager',array('pages' => $pages, 'cssFile'=>Yii::app()->request->baseUrl.'/css/pager.css')); ?>
+<?php $this->widget('CLinkPager',array('pages' => $pages, 'cssFile'=>Yii::app()->request->baseUrl.'/css/pager.css')); ?>
 </div>
 <table class="dataGrid">
 	<tr id="sort-buttons">
@@ -34,4 +34,4 @@
 <?php endforeach; ?>
 </table>
 
-<?php //echo $this->widget('CLinkPager',array('pages' => $pages));
+<?php //$this->widget('CLinkPager',array('pages' => $pages));

@@ -15,8 +15,14 @@ class AdminController extends Controller
 		);
 	}
 	public function actionList() {
-		$records = TextEdit::model()->findAll();
-		$this->render('list', compact('records'));
+		$criteria = new CDbCriteria;
+		$criteria->order = '`namedId`';
+		$pages = new CPagination(TextEdit::model()->count($criteria));
+		$pages->pageSize = 5;
+		$pages->applyLimit($criteria);
+		
+		$records = TextEdit::model()->findAll($criteria);
+		$this->render('list', compact('records', 'pages'));
 	}
 
 }
