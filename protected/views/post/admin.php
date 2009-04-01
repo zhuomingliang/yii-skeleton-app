@@ -8,7 +8,7 @@ JavaScript::deleteItem();
 $items = array();
 $items[] = array('Post List',array('list'));
 $items[] = array('New Post',array('create'));
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 ?>
 
 

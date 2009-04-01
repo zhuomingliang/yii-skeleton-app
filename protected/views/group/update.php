@@ -4,7 +4,7 @@
 $items = array();
 $items[] = array('Group Listing',array('list'));
 $items[] = array('New Group',array('create'));
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 ?>
 <div class="yiiForm">
 <?php echo CHtml::form(); ?>

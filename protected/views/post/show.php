@@ -11,7 +11,7 @@ if (($post->user_id == Yii::app()->user->id) || Yii::app()->user->hasAuth(Group:
 if (Yii::app()->user->hasAuth(Group::ADMIN))
 	$items[] = array('Admin',array('admin'));
 
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 ?>
 
 <div class="post">

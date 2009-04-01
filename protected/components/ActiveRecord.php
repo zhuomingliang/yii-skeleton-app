@@ -27,7 +27,7 @@ class ActiveRecord extends CActiveRecord
 		return array_unique($safe);
 	}
 	
-	public function getMarkdown($column, $userCss = true) {
+	public function getMarkdown($column, $userCss=true) {
 		if ($userCss)
 			Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/markdown.css');
 		Yii::app()->getClientScript()->registerCssFile(Yii::app()->request->baseUrl.'/css/highlight.css');

@@ -18,11 +18,11 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 
 <div id="header">
 <div style="float: right; margin: 8px;">
-<?php $this->widget('application.components.UserStatus'); ?>
+<?php $this->widget('UserStatus'); ?>
 </div>
 <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 <div id="mainmenu">
-<?php $this->widget('application.components.Menu',array(
+<?php $this->widget('Menu',array(
 	'items'=>array(
 		array('Home', array('/site/index')),
 		array('Contact', array('/site/contact')),

@@ -3,7 +3,7 @@
 <?php
 $items = array();
 $items[] = array('Group List',array('list'));
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 ?>
 
 

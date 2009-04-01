@@ -6,7 +6,7 @@ $items[] = array('New Post',array('create'));
 if (Yii::app()->user->hasAuth(Group::ADMIN)){
 	$items[] = array('Admin',array('admin'));
 }
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 ?>
 <?php foreach($posts as $n=>$post) { ?>
 <div class="post">

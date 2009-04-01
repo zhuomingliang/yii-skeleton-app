@@ -11,6 +11,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.components.helpers.*',
+		'application.components.behaviors.*',
+		'application.components.widgets.*',
 		'application.extensions.*',
 	),
 	'preload'=>array('log'),

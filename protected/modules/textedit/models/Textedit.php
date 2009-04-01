@@ -7,7 +7,7 @@ class TextEdit extends ActiveRecord
 	public function behaviors(){
 		return array(
 			'ParseCacheBehavior' => array(
-				'class' => 'application.components.ParseCacheBehavior',
+				'class' => 'ParseCacheBehavior',
 				'attributes' => array('content'),
 				'safeTransform' => false,
 			),

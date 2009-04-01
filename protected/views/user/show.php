@@ -7,7 +7,7 @@ if (Yii::app()->user->hasAuth(Group::ADMIN)){
 	$items[] = array('Update User', array('update','id'=>$user->id));
 	$items[] = array('Delete User', array('delete','id'=>$user->id), 'htmlOptions'=>array('class' => 'deleteItem'));
 }
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 
 $username = CHtml::encode($user->username); //cache the encoding
 ?>

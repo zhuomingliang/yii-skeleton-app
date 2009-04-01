@@ -7,7 +7,7 @@ $items = array();
 $items[] = array('Group Listing',array('list'));
 $items[] = array('Rename Group',array('update','id'=>$group->id));
 $items[] = array('Delete Group',array('delete','id'=>$group->id), 'htmlOptions'=>array('class' => 'deleteItem'));
-$this->widget('application.components.Menu',array('items'=>$items));
+$this->widget('Menu',array('items'=>$items));
 ?>
 
 <table class="dataGrid">
