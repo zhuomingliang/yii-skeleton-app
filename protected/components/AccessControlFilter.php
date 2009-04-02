@@ -73,7 +73,7 @@ class AccessRule extends CComponent
 	 */
 	public $comparison = 'min';
 	
-	public function isUserAllowed($user,$action,$ip,$verb)
+	public function isUserAllowed($user,$controller,$action,$ip,$verb)
 	{
 		if ((!in_array($action->getId(), $this->actions)) && (!in_array('*', $this->actions)))
 			return 0;
