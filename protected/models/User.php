@@ -103,6 +103,7 @@ class User extends ActiveRecord
 		return array(
 			'group' => array(self::BELONGS_TO, 'Group', 'group_id'),
 			'post' => array(self::HAS_MANY, 'Post', 'user_id'),
+			'num_posts' => array(self::STAT, 'Post', 'user_id'),
 		);
 	}
 

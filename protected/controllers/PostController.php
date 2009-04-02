@@ -52,7 +52,7 @@ class PostController extends Controller
 		$post=new Post;
 		if(isset($_POST['Post']))
 		{
-			$post->attributes=$_POST['Post'];
+			$post->setAttributes($_POST['Post']);
 			if($post->save())
 				$this->redirect(array('show','id'=>$post->id));
 		}
@@ -72,7 +72,7 @@ class PostController extends Controller
 			
 		if(isset($_POST['Post']))
 		{
-			$post->attributes=$_POST['Post'];
+			$post->setAttributes($_POST['Post']);
 			if($post->save())
 				$this->redirect(array('show','id'=>$post->id));
 		}

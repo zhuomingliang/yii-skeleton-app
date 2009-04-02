@@ -17,6 +17,7 @@ $username = CHtml::encode($user->username); //cache the encoding
 	<?php if ($user->email_visible) {?>
 		<br />Email: <b><?php echo $user->email ?></b>
 	<?php } ?>
+	<br />This user has published <?php echo $user->num_posts;?> posts
 </p>
 <?php if (!empty($user->about)) { ?>
 	<h3>About <?php echo $username; ?></h3>

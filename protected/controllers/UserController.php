@@ -30,10 +30,11 @@ class UserController extends Controller {
 		$user = new User;
 		if (Yii::app()->request->isPostRequest) {
 			// collect user input data
+			$user->setScenario('login');
 			if (isset($_POST['User']))
-				$user->setAttributes($_POST['User'], 'login');
+				$user->setAttributes($_POST['User']);
 			// validate user input and redirect to previous page if valid
-			if ($user->validate('login'))// ;
+			if ($user->validate())// ;
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
@@ -63,7 +64,8 @@ class UserController extends Controller {
 
 		$sort->defaultOrder = '`user`.`created` DESC';
 		$sort->applyOrder($criteria);
-		$users=User::model()->with('group')->findAll($criteria);
+		//$criteria->select='COUNT(post.id) AS NumComments';
+		$users=User::model()->with('group', 'num_posts')->findAll($criteria);
 
 		//The user list supports AJAX.  Not sure if this is a good thing in this case,
 		//but I'll leave it as an example
@@ -91,10 +93,11 @@ class UserController extends Controller {
 		$user = new User;
 		
 		if (isset($_POST['User'])) {
-			$user->setAttributes($_POST['User'], 'register');
+			$user->setScenario('register');
+			$user->setAttributes($_POST['User']);
 
 			$user->activated = false;
-			if ($user->validate('register')) {
+			if ($user->validate()) {
 				$user->encryptPassword();
 				if ($user->save(false))
 					$this->redirect(array('site/index'));
@@ -112,12 +115,12 @@ class UserController extends Controller {
 
 		$user = $this->loadUser($id);
 		if (isset($_POST['User'])) {
-			$scenario = Yii::app()->user->hasAuth(Group::ADMIN) ? 'updateAdmin' : 'update';
+			$user->setScenario(Yii::app()->user->hasAuth(Group::ADMIN) ? 'updateAdmin' : 'update');
 
 			$oldEmail = $user->email;
-			$user->setAttributes($_POST['User'], $scenario);
+			$user->setAttributes($_POST['User']);
 
-			if ($user->validate($scenario)) {
+			if ($user->validate()) {
 				$redirect = array('show', 'id'=>$id);
 				
 				//email logic
@@ -146,9 +149,10 @@ class UserController extends Controller {
 		$user = new User;
 
 		if (isset($_POST['User'])) {
-			$user->setAttributes($_POST['User'], 'recover');
+			$user->setScenario('recover');
+			$user->setAttributes($_POST['User']);
 
-			if ($user->validate('recover')) {				
+			if ($user->validate()) {				
 				$found = User::model()->findByAttributes(array('email'=>$user->email));
 				
 				if ($found !== null) {

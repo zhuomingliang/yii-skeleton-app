@@ -29,8 +29,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 		array('Users', array('/user/list')),
 		array('Posts', array('/post/list')),
 		array('News Archive', array('/post/news')),
-		array('Groups', array('/group/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
-		array('TextEdit module', array('/textedit/admin/list'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
+		array('Admin', array('/admin'), 'visible'=>Yii::app()->user->hasAuth(Group::ADMIN)),
 	),
 	'view' => 'mainMenu'
 )); ?>

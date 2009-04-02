@@ -4,6 +4,7 @@
 <table class="dataGrid">
 	<tr id="sort-buttons">
 		<th><?php echo $sort->link('user.username'); ?></th>
+		<th>Posts</th>
 		<th><?php echo $sort->link('user.group_id'); ?></th>
 		<th><?php echo $sort->link('user.email'); ?></th>
 		<th><?php echo $sort->link('user.created'); ?></th>
@@ -13,6 +14,7 @@
 <?php foreach($users as $n => $user): ?>
 	<tr class="<?php echo $n%2 ? 'even' : 'odd' ?>">
 		<td class="username"><?php echo CHtml::link(CHtml::encode($user->username), array('show', 'id'=>$user->id)); ?></td>
+		<td><?php echo $user->num_posts; ?></td>
 		<td><?php echo $user->group->name; ?></td>
 		<td><?php echo $user->publicEmail; ?></td>
 		<td><?php echo Time::niceShort($user->created); ?></td>
