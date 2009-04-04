@@ -38,17 +38,15 @@ class Menu extends CWidget
 		{
 			if(isset($item['visible']) && !$item['visible'])
 				continue;
-
-			$item2=array();
-			$item2['label']=$item[0];
-			if(is_array($item[1]))
-				$item2['url']=$controller->createUrl($item[1][0]);
-			else
-				$item2['url']=$item[1];
+		
 			$pattern=isset($item['pattern'])?$item['pattern']:$item[1];
 			$active=$this->isActive($pattern,$controller->id,$action->id);
 			if ($this->hideActive && $active)
 				continue;
+				
+			$item2['label']=$item[0];
+			$item2['url'] = $item[1];
+				
 			$item2['htmlOptions'] = isset($item['htmlOptions']) ? $item['htmlOptions'] : array();
 			if ($active) {
 				if (isset($item2['htmlOptions']['class']))
@@ -56,7 +54,7 @@ class Menu extends CWidget
 				else
 					$item2['htmlOptions']['class'] = 'active';
 			}
-			$item2['exactUrl'] = $item[1];
+
 			$items[]=$item2;
 		}
 		$this->render($this->view,compact('items'));
