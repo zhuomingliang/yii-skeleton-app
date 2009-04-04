@@ -53,9 +53,8 @@ class User extends ActiveRecord
 			
 			array('email, email_visible, notify_comments, notify_messages', 'required', 'on' => 'update, updateAdmin'),
 			array('email_visible, notify_comments, notify_messages', 'in', 'range' => array('0','1')),
-			//array('group_id', 'exists', 'className'=>'Group', 'attributeName' => 'id', 'on' => 'updateAdmin'),
-			array('group_id', 'application.models.validators.EUniquenessValidator', 'model'=>'Group', 'on' => 'updateAdmin'),
 			
+			array('group_id', 'exist', 'className'=>'Group', 'attributeName' => 'id', 'on' => 'updateAdmin'),			
 			array('group_id', 'numerical', 'integerOnly' => true),
 		);
 	}
