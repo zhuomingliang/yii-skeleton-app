@@ -32,7 +32,6 @@ class Menu extends CWidget
 	public function run()
 	{
 		$items = $this->parseItems($this->items);
-		echo "<pre>";print_r($items);echo "</pre>";
 		$this->render($this->view,compact('items'));
 	}
 	protected function parseItems($_items) {
