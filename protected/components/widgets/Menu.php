@@ -31,16 +31,24 @@ class Menu extends CWidget
 	
 	public function run()
 	{
-		$items=array();
-		$controller=$this->controller;
-		$action=$controller->action;
-		foreach($this->items as $item)
+		$items = $this->parseItems($this->items);
+		echo "<pre>";print_r($items);echo "</pre>";
+		$this->render($this->view,compact('items'));
+	}
+	protected function parseItems($_items) {
+		$items = array();
+		foreach($_items as $key => $item)
 		{
+			if (!is_numeric($key)) {
+				$items[$key] = $this->parseItems($item);
+				continue;	
+			}
+				
 			if(isset($item['visible']) && !$item['visible'])
 				continue;
 		
 			$pattern=isset($item['pattern'])?$item['pattern']:$item[1];
-			$active=$this->isActive($pattern,$controller->id,$action->id);
+			$active=$this->isActive($pattern,$this->controller->id,$this->controller->action->id);
 			if ($this->hideActive && $active)
 				continue;
 				
@@ -57,9 +65,8 @@ class Menu extends CWidget
 
 			$items[]=$item2;
 		}
-		$this->render($this->view,compact('items'));
+		return $items;
 	}
-
 	protected function isActive($pattern,$controllerID,$actionID)
 	{
 		if(!is_array($pattern) || !isset($pattern[0]))
