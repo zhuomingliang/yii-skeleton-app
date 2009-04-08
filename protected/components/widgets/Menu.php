@@ -55,12 +55,14 @@ class Menu extends CWidget
 			$item2['url'] = $item[1];
 				
 			$item2['htmlOptions'] = isset($item['htmlOptions']) ? $item['htmlOptions'] : array();
+
 			if ($active) {
+				$item2['active'] = true;
 				if (isset($item2['htmlOptions']['class']))
 					$item2['htmlOptions']['class'] .= ' active';
 				else
 					$item2['htmlOptions']['class'] = 'active';
-			}
+			} else $item2['active'] = false;
 
 			$items[]=$item2;
 		}
