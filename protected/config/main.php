@@ -15,6 +15,7 @@ return array(
 		'application.components.behaviors.*',
 		'application.components.widgets.*',
 		'application.extensions.*',
+		'application.controllers.AdminController',
 	),
 	'preload'=>array('log'),
 	'modules'=>array('textedit'),
