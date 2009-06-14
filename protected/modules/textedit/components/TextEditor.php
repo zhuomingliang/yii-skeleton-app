@@ -32,7 +32,8 @@ class TextEditor extends CWidget
 		}
 
 		$this->registerScript();
-		echo '<div class="textedit" id="textedit_'.$model->namedId.'">';
+		$id = ($model) ? $model->namedId : $this->id;
+		echo '<div class="textedit" id="textedit_'.$id.'">';
 		
 		if ($model)
 			echo $model->getMarkdown('content', false);
@@ -58,7 +59,7 @@ class TextEditor extends CWidget
 			type: 'textarea',
 			cancel: 'Cancel'
 		}).hover(function() {
-		    $(this).css({'backgroundColor': '#FFFF9E'});
+		    $(this).css({'backgroundColor': '#FDFD72'});
 		}, function() {
 		    $(this).css({'backgroundColor': ''});
 		});

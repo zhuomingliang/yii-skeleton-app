@@ -15,7 +15,6 @@ return array(
 		'application.components.behaviors.*',
 		'application.components.widgets.*',
 		'application.extensions.*',
-		'application.controllers.AdminController',
 	),
 	'preload'=>array('log'),
 	'modules'=>array('textedit'),
@@ -48,6 +47,7 @@ return array(
 					'class'=>'CWebLogRoute',
 					'levels'=>'trace, info, error, warning',
 					'categories'=>'system.db.*',
+					'showInFireBug'=>true //firebug only - turn off otherwise
 				),
 				array(
 					'class'=>'CFileLogRoute',

@@ -19,7 +19,7 @@ body
 .post h2 { margin-bottom: 0; }
 .post h3 { margin-bottom: 0; }
 .textedit {
-	background: #FFFFE1;
+	background: #FFFF9E;
 }
 .textedit textarea {min-height: 50px; overflow-y: scroll;}
 #page

@@ -1,12 +1,12 @@
 <h2>News Archive</h2>
 
 <?php
-$items = array();
-$items[] = array('New Post',array('create'));
 if (Yii::app()->user->hasAuth(Group::ADMIN)){
+	$items = array();
 	$items[] = array('Admin',array('admin'));
+	$items[] = array('New Post',array('create'));
+	$this->widget('Menu',array('items'=>$items));
 }
-$this->widget('Menu',array('items'=>$items));
 ?>
 <?php foreach($posts as $n=>$post) { ?>
 <div class="post">
