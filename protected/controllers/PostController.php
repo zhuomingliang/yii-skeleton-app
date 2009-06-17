@@ -40,7 +40,22 @@ class PostController extends Controller
 	 */
 	public function actionShow()
 	{
-		$this->render('show',array('post'=>$this->loadPost()));
+		$post = $this->loadPost();
+		$comment = $this->createComment($post);
+		$this->render('show', compact('post', 'comment'));
+	}
+	protected function createComment($post) {
+		$comment = new Comment();
+		$comment->post_id = $post->id;
+		if (isset($_POST['Comment']))
+		{
+			$comment->setAttributes($_POST['Comment']);
+			if ($comment->save()) {
+				if (!Yii::app()->request->isAjaxRequest)
+					$this->redirect(array('post/show','id'=>$comment->post_id,'#'=>'c'.$comment->id));
+			}	
+		}
+		return $comment;
 	}
 
 	/**

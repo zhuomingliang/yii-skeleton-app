@@ -12,9 +12,9 @@ class AutoTimestampBehavior extends CActiveRecordBehavior {
 	
 	public function beforeValidate($on) {
 		if ($this->Owner->isNewRecord)
-			$this->Owner->{$this->created} = new CDbExpression('NOW()');
+			if ($this->created !== null) {$this->Owner->{$this->created} = new CDbExpression('NOW()');}
 		else
-			$this->Owner->{$this->modified} = new CDbExpression('NOW()');
+			if ($this->modified !== null) {$this->Owner->{$this->modified} = new CDbExpression('NOW()');}
 			
 		return true;	
 	}

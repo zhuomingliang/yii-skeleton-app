@@ -43,6 +43,7 @@ class Post extends ActiveRecord
 	{
 		return array(
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'comments' => array(self::HAS_MANY, 'Comment', 'post_id', 'with'=>'user'),
 		);
 	}
 	public function safeAttributes() {

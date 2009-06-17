@@ -28,5 +28,12 @@ if ($post->modified) {
 <?php echo $post->getMarkdown('content'); ?>
 
 </div>
-
-</p>
+<h2>Comments</h2>
+<?php $this->renderPartial('/comment/_list',array(
+	'comments'=>$post->comments,
+	'post'=>$post,
+)); ?>
+<h3>Leave a Comment</h3>
+<?php $this->renderPartial('/comment/_form',array(
+	'comment'=>$comment,
+)); ?>

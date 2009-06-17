@@ -33,7 +33,8 @@ class TextEditor extends CWidget
 
 		$this->registerScript();
 		$id = ($model) ? $model->namedId : $this->id;
-		echo '<div class="textedit" id="textedit_'.$id.'">';
+		echo '<div class="texteditId">Id: '.$id.'</div>
+		<div class="textedit" id="textedit_'.$id.'">';
 		
 		if ($model)
 			echo $model->getMarkdown('content', false);

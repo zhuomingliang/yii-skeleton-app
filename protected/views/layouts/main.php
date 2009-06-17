@@ -24,7 +24,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 <div id="mainmenu">
 <?php $this->widget('Menu',array(
 	'items'=>array(
-		array('Home', array('/site/index')),
+		array('Home', array('/')),
 		array('Contact', array('/site/contact')),
 		array('Users', array('/user/list')),
 		array('Posts', array('/post/list')),
