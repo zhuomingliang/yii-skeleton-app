@@ -17,7 +17,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 <div id="page">
 
 <div id="header">
-<div style="float: right; margin: 8px;">
+<div id="userStatus">
 <?php $this->widget('UserStatus'); ?>
 </div>
 <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
