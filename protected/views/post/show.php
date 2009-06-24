@@ -15,8 +15,8 @@ $this->widget('Menu',array('items'=>$items));
 ?>
 
 <div class="post">
-<h2><?php echo CHtml::encode($post->title); ?></h2>
-<p class="summary">By <?php echo CHtml::link(CHtml::encode($post->user->username), array('user/show', 'id'=>$post->user->id)); ?>  on 
+<h2><?php echo Html::encode($post->title); ?></h2>
+<p class="summary">By <?php echo Html::link(Html::encode($post->user->username), array('user/show', 'id'=>$post->user->id)); ?>  on 
 <?php echo Time::nice($post->created);
 if ($post->modified) {
 	echo '<br />Modified on ';

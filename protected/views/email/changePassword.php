@@ -6,7 +6,7 @@ echo $user->username; ?>,
 </p>
 
 <p>
-You have changed your password at <?php echo CHtml::encode(Yii::app()->name); ?> (<?php echo CHtml::link(Yii::app()->request->getBaseUrl(true), Yii::app()->request->getBaseUrl(true)) ?>).  Please keep this email for your records.
+You have changed your password at <?php echo Html::encode(Yii::app()->name); ?> (<?php echo Html::link(Yii::app()->request->getBaseUrl(true), Yii::app()->request->getBaseUrl(true)) ?>).  Please keep this email for your records.
 </p>
 
 <p>

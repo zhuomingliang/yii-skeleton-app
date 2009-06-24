@@ -23,14 +23,14 @@ $this->widget('Menu',array('items'=>$items));
   </tr>
 <?php foreach($postList as $n=>$model): ?>
   <tr class="<?php echo $n%2?'even':'odd';?>">
-    <td><?php echo CHtml::link($model->id,array('show','id'=>$model->id)); ?></td>
-    <td><?php echo CHtml::encode($model->user_id); ?></td>
-    <td><?php echo CHtml::encode($model->title); ?></td>
-    <td><?php echo CHtml::encode($model->created); ?></td>
-    <td><?php echo CHtml::encode($model->modified); ?></td>
+    <td><?php echo Html::link($model->id,array('show','id'=>$model->id)); ?></td>
+    <td><?php echo Html::encode($model->user_id); ?></td>
+    <td><?php echo Html::encode($model->title); ?></td>
+    <td><?php echo Html::encode($model->created); ?></td>
+    <td><?php echo Html::encode($model->modified); ?></td>
     <td>
-      <?php echo CHtml::link('Update',array('update','id'=>$model->id)); ?>
-      <?php echo CHtml::link('Delete',array('delete','id'=>$model->id), array('class'=>'deleteItem')); ?>
+      <?php echo Html::link('Update',array('update','id'=>$model->id)); ?>
+      <?php echo Html::link('Delete',array('delete','id'=>$model->id), array('class'=>'deleteItem')); ?>
 	</td>
   </tr>
 <?php endforeach; ?>

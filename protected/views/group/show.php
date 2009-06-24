@@ -12,7 +12,7 @@ $this->widget('Menu',array('items'=>$items));
 
 <table class="dataGrid">
 <tr>
-	<th class="label"><?php echo CHtml::encode($group->getAttributeLabel('name')); ?></th>
-    <td><?php echo CHtml::encode($group->name); ?></td>
+	<th class="label"><?php echo Html::encode($group->getAttributeLabel('name')); ?></th>
+    <td><?php echo Html::encode($group->name); ?></td>
 </tr>
 </table>

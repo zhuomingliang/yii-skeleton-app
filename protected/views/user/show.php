@@ -9,7 +9,7 @@ if (Yii::app()->user->hasAuth(Group::ADMIN)){
 }
 $this->widget('Menu',array('items'=>$items));
 
-$username = CHtml::encode($user->username); //cache the encoding
+$username = Html::encode($user->username); //cache the encoding
 ?>
 <h2><?php echo $username ?>'s Profile</h2>
 <p>
@@ -29,7 +29,7 @@ if (!empty($user->post)) {
 <?php
 foreach($user->post as $n=>$post){ ?>
 <div class="post">
-<h3><?php echo CHtml::link($post->title,array('post/show','id'=>$post->id)); ?></h3>
+<h3><?php echo Html::link($post->title,array('post/show','id'=>$post->id)); ?></h3>
 <p class="summary">
 On <?php echo Time::nice($post->created); ?>
 </p>

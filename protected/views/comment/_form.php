@@ -5,19 +5,19 @@ if (Yii::app()->user->isGuest) {
 }
 ?>
 <div class="yiiForm">
-<?php echo CHtml::form(); ?>
+<?php echo Html::form(); ?>
 
-<?php echo CHtml::errorSummary($comment); ?>
+<?php echo Html::errorSummary($comment); ?>
 
 <div class="simple">
-<?php echo CHtml::activeLabel($comment,'content'); ?>
-<?php echo CHtml::activeTextArea($comment,'content'); ?>
+<?php echo Html::activeLabel($comment,'content'); ?>
+<?php echo Html::activeTextArea($comment,'content'); ?>
 <p class="hint">
-You may enter content using <?php echo CHtml::link('Markdown syntax', 'http://daringfireball.net/projects/markdown/syntax', array('target'=>'_blank'))?>.
+You may enter content using <?php echo Html::link('Markdown syntax', 'http://daringfireball.net/projects/markdown/syntax', array('target'=>'_blank'))?>.
 </p>
 </div>
 <div class="action">
-<?php echo CHtml::submitButton('done'); ?>
+<?php echo Html::submitButton('done'); ?>
 </div>
 
 </form>

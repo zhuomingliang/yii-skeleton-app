@@ -7,17 +7,17 @@ $items[] = array('New Group',array('create'));
 $this->widget('Menu',array('items'=>$items));
 ?>
 <div class="yiiForm">
-<?php echo CHtml::form(); ?>
+<?php echo Html::form(); ?>
 
-<?php echo CHtml::errorSummary($group); ?>
+<?php echo Html::errorSummary($group); ?>
 
 <div class="simple">
-<?php echo CHtml::activeLabel($group,'name'); ?>
-<?php echo CHtml::activeTextField($group,'name',array('size'=>50,'maxlength'=>50)); ?>
+<?php echo Html::activeLabel($group,'name'); ?>
+<?php echo Html::activeTextField($group,'name',array('size'=>50,'maxlength'=>50)); ?>
 </div>
 
 <div class="action">
-<?php echo CHtml::submitButton('Save'); ?>
+<?php echo Html::submitButton('Save'); ?>
 </div>
 
 </form>

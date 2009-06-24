@@ -108,10 +108,12 @@ div.yiiForm input, textarea {
 div.yiiForm textarea {
 	height: 100px;
 }
-div.yiiForm input[type=checkbox] {
+/*div.yiiForm input[type=checkbox], */
+div.yiiForm input.checkbox{
 	width: auto;
 }
-div.yiiForm input[type=submit] {
+/*div.yiiForm input[type=submit], */
+div.yiiForm input.submit {
 	padding: 2px 5px;
 	width: auto;
 }

@@ -8,17 +8,17 @@ if(Yii::app()->user->hasFlash('recover')) {
 $this->widget('textedit.components.TextEditor', array('id'=>'userRecovery'));
 ?>
 <div class="yiiForm">
-<?php echo CHtml::form(); ?>
+<?php echo Html::form(); ?>
 
-<?php echo CHtml::errorSummary($user); ?>
+<?php echo Html::errorSummary($user); ?>
 
 <div class="simple">
-<?php echo CHtml::activeLabel($user,'email'); ?>
-<?php echo CHtml::activeTextField($user,'email') ?>
+<?php echo Html::activeLabel($user,'email'); ?>
+<?php echo Html::activeTextField($user,'email') ?>
 </div>
 
 <div class="action">
-<?php echo CHtml::submitButton('Submit'); ?>
+<?php echo Html::submitButton('Submit'); ?>
 </div>
 
 </form>

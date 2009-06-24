@@ -18,10 +18,10 @@ JavaScript::deleteItem();
 <p>To add a group, first add one here by clicking "New Group".  The group's id is it's user level.  Usually, the higher the number, the more powers.  After you have added the group here, edit the Group.php model file and add a class constant to Group (following the order of the other constants).</p>
 <p>
 <?php
-echo CHtml::link('New Group',array('create'), array('id'=>'newGroup', 'style'=>'display:none'))
-.CHtml::form('create', 'post', array('id'=>'createForm'))
-.CHtml::textField('Group[name]','',array('size'=>20))
-.CHtml::submitButton('Add').'</form>';
+echo Html::link('New Group',array('create'), array('id'=>'newGroup', 'style'=>'display:none'))
+.Html::form('create', 'post', array('id'=>'createForm'))
+.Html::textField('Group[name]','',array('size'=>20))
+.Html::submitButton('Add').'</form>';
 ?>
 </p>
 
@@ -33,11 +33,11 @@ echo CHtml::link('New Group',array('create'), array('id'=>'newGroup', 'style'=>'
   </tr>
 <?php foreach($groups as $n=>$group): ?>
   <tr class="<?php echo $n%2?'even':'odd';?>">
-    <td><?php echo CHtml::link($group->id,array('show','id'=>$group->id)); ?></td>
-    <td><?php echo CHtml::encode($group->name); ?></td>
+    <td><?php echo Html::link($group->id,array('show','id'=>$group->id)); ?></td>
+    <td><?php echo Html::encode($group->name); ?></td>
     <td>
-      <?php echo CHtml::link('Rename',array('update','id'=>$group->id)); ?>
-      <?php echo CHtml::link('Delete', array('delete','id'=>$group->id), array('class'=>'deleteItem')); ?>
+      <?php echo Html::link('Rename',array('update','id'=>$group->id)); ?>
+      <?php echo Html::link('Delete', array('delete','id'=>$group->id), array('class'=>'deleteItem')); ?>
 	</td>
   </tr>
 <?php endforeach; ?>

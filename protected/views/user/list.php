@@ -33,7 +33,7 @@ $('#sort-buttons a, .yiiPager a').click(updatePage);
 
 EOD;
 
-//echo CHtml::script($script);
+//echo Html::script($script);
 Yii::app()->clientScript->registerScript('userListPagination', $script, CClientScript::POS_READY);
 //Yii::app()->clientScript->registerCoreScript('jquery'); //not needed when using CClientScript::POS_READY
 

@@ -4,11 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="language" content="en" />
 <?php
-echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/reset.css');
-echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/typography.css');
-echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/main.css');
-echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
-//echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/ie.css');
+echo Html::cssFile(Yii::app()->request->baseUrl.'/css/reset.css');
+echo Html::cssFile(Yii::app()->request->baseUrl.'/css/typography.css');
+echo Html::cssFile(Yii::app()->request->baseUrl.'/css/main.css');
+echo Html::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
+//echo Html::cssFile(Yii::app()->request->baseUrl.'/css/ie.css');
 ?>
 <title><?php echo $this->pageTitle; ?></title>
 </head>
@@ -20,7 +20,7 @@ echo CHtml::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 <div id="userStatus">
 <?php $this->widget('UserStatus'); ?>
 </div>
-<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+<div id="logo"><?php echo Html::encode(Yii::app()->name); ?></div>
 <div id="mainmenu">
 <?php $this->widget('Menu',array(
 	'items'=>array(
