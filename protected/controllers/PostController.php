@@ -156,12 +156,12 @@ class PostController extends Controller
 		$criteria=new CDbCriteria;
 
 		$pages=new CPagination(Post::model()->count($criteria));
-		$pages->pageSize=25;
+		$pages->pageSize=35;
 		$pages->applyLimit($criteria);
 
 		$sort=new CSort('Post');
+		$sort->defaultOrder = '`post`.`created` DESC';
 		$sort->applyOrder($criteria);
-		$criteria->order = '`post`.`created` DESC';
 		$postList=Post::model()->findAll($criteria);
 
 		$this->render('admin', compact('postList',	'pages', 'sort'));

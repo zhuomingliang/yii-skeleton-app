@@ -60,6 +60,8 @@ class Post extends ActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'created'=>'Date Created',
+			'modified'=>'Date Modefied',
 		);
 	}
 }

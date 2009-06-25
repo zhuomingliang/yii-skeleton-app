@@ -17,11 +17,11 @@ class AdminController extends Controller
 	public function actionList() {
 		$criteria = new CDbCriteria;
 		$criteria->order = '`namedId`';
-		$pages = new CPagination(TextEdit::model()->count($criteria));
+		$pages = new CPagination(Textedit::model()->count($criteria));
 		$pages->pageSize = 5;
 		$pages->applyLimit($criteria);
 		
-		$records = TextEdit::model()->findAll($criteria);
+		$records = Textedit::model()->findAll($criteria);
 		$this->render('list', compact('records', 'pages'));
 	}
 

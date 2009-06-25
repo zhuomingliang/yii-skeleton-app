@@ -26,8 +26,8 @@ $this->widget('Menu',array('items'=>$items));
     <td><?php echo Html::link($model->id,array('show','id'=>$model->id)); ?></td>
     <td><?php echo Html::encode($model->user_id); ?></td>
     <td><?php echo Html::encode($model->title); ?></td>
-    <td><?php echo Html::encode($model->created); ?></td>
-    <td><?php echo Html::encode($model->modified); ?></td>
+    <td><?php echo Time::niceShort($model->created); ?></td>
+    <td><?php if ($model->modified) echo Time::niceShort($model->modified); ?></td>
     <td>
       <?php echo Html::link('Update',array('update','id'=>$model->id)); ?>
       <?php echo Html::link('Delete',array('delete','id'=>$model->id), array('class'=>'deleteItem')); ?>
