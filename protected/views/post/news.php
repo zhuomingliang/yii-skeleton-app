@@ -3,12 +3,11 @@
 <?php
 if (Yii::app()->user->hasAuth(Group::ADMIN)){
 	$items = array();
-	$items[] = array('Admin',array('admin'));
 	$items[] = array('New Post',array('create'));
+	$items[] = array('Admin',array('admin'));
 	$this->widget('Menu',array('items'=>$items));
 }
-?>
-<?php foreach($posts as $n=>$post) { ?>
+foreach($posts as $n=>$post) { ?>
 <div class="post">
 	<h3><?php echo Html::link($post->title,array('show','id'=>$post->id)); ?></h3>
 	<p class="summary">

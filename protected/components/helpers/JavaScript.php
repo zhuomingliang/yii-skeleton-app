@@ -13,6 +13,10 @@ class JavaScript {
 	$(".deleteItem").click(deleteItem);
 EOD;
 
-	Yii::app()->clientScript->registerScript('userShow', $script, CClientScript::POS_READY);
+	Yii::app()->clientScript->registerScript('delete', $script, CClientScript::POS_READY);
+	}
+	public static function makeAjaxSafe() {
+		$tmp = Yii::app()->log->routes['web'];
+		$tmp->enabled=false;	
 	}
 }

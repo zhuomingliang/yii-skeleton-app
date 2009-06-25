@@ -43,13 +43,13 @@ return array(
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
-				array(
+				'web'=>array(
 					'class'=>'CWebLogRoute',
 					'levels'=>'trace, info, error, warning',
 					'categories'=>'system.db.*',
 					'showInFireBug'=>true //firebug only - turn off otherwise
 				),
-				array(
+				'file'=>array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning, watch',
 					'categories'=>'system.*',
