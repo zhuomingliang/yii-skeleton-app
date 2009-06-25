@@ -84,9 +84,9 @@ class UserController extends Controller {
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
 		$criteria->order = '`post`.`created` DESC';
-		$user->post = Post::model()->findAll($criteria);
+		$posts = Post::model()->findAll($criteria);
 			
-		$this->render('show', compact('user', 'pages'));
+		$this->render('show', compact('user', 'pages', 'posts'));
 	}
 
 	public function actionCreate() {

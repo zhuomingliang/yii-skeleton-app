@@ -23,11 +23,11 @@ $username = Html::encode($user->username); //cache the encoding
 	<h3>About <?php echo $username; ?></h3>
 	<?php echo $user->getMarkdown('about'); ?>
 <?php }
-if (!empty($user->post)) {
+if (!empty($posts)) {
 ?>
 <h4>Posts by <?php echo $username; ?></h4>
 <?php
-foreach($user->post as $n=>$post){ ?>
+foreach($posts as $n=>$post){ ?>
 <div class="post">
 <h3><?php echo Html::link($post->title,array('post/show','id'=>$post->id)); ?></h3>
 <p class="summary">
