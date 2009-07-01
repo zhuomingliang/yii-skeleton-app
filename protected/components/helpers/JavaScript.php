@@ -1,22 +1,21 @@
 <?php
 class JavaScript {
-	public static function deleteItem() {
-	Yii::app()->clientScript->registerCoreScript('yii');
-	$script = <<<EOD
-	function deleteItem(){
-		if (confirm('Are you sure?')) {
-			jQuery.yii.submitForm(this,this.href,{});
-		}
-		return false;
+	public static function deleteItem($message='Are you sure you want to delete this?', $element='.deleteItem') {
+		Yii::app()->clientScript->registerCoreScript('yii');
+		$script = <<<EOD
+function deleteItem(){
+	if (confirm('$message')) {
+		jQuery.yii.submitForm(this,this.href,{});
 	}
+	return false;
+}
 
-	$(".deleteItem").click(deleteItem);
+$("$element").click(deleteItem);
 EOD;
 
-	Yii::app()->clientScript->registerScript('delete', $script, CClientScript::POS_READY);
+		Yii::app()->clientScript->registerScript('delete', $script, CClientScript::POS_READY);
 	}
 	public static function makeAjaxSafe() {
-		$tmp = Yii::app()->log->routes['web'];
-		$tmp->enabled=false;	
+		Yii::app()->log->routes['web']->enabled = false;
 	}
 }

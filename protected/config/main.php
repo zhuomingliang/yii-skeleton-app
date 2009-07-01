@@ -17,7 +17,12 @@ return array(
 		'application.extensions.*',
 	),
 	'preload'=>array('log'),
-	'modules'=>array('textedit'),
+	'modules'=>array(
+		'textedit',
+		'email' => array(
+			'delivery'=>'debug',
+		)
+	),
 	// application components
 	'components'=>array(
 //		'session' => array(
@@ -29,10 +34,6 @@ return array(
 			'connectionString'=>'mysql:host=localhost;dbname=yiitestdrive',
 			'username'=>'root',
 			'password'=>'',
-		),
-		'email'=>array(
-			'class'=>'application.extensions.email.Email',
-			'delivery'=>'debug',
 		),
 		'user'=>array(
 			'class'=>'application.components.WebUser',

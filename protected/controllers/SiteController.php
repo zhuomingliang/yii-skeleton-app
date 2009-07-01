@@ -38,7 +38,8 @@ class SiteController extends Controller
 			$contact->attributes=$_POST['ContactForm'];
 			if($contact->validate())
 			{
-				$email = Yii::app()->email;
+				Yii::app()->getModule('email');
+				$email = new Email;
 				$email->to = Yii::app()->params['adminEmail'];
 				$email->from = $email->replyTo = $contact->email;
 				$email->subject = $contact->subject;

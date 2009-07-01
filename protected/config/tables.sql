@@ -82,6 +82,20 @@ CREATE TABLE IF NOT EXISTS `post` (
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+
+--
+-- Table structure for table `failedemail`
+--
+
+CREATE TABLE IF NOT EXISTS `failedemail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `to` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `serialize` text NOT NULL,
+  `sent` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+ 
 --
 -- Table structure for table `textedit`
 --

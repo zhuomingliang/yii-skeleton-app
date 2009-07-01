@@ -31,6 +31,7 @@ class TexteditController extends Controller
 		echo $textedit->getMarkdown('content', false);
 	}
 	public function actionLoadraw() {
+		JavaScript::makeAjaxSafe();
 		//Yii::log($_GET['id'], 'watch', 'system.web');
 		$_GET['id'] = substr($_GET['id'], 9);
 		$model = Textedit::model()->find("`namedId`='{$_GET['id']}'");

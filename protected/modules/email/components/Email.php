@@ -61,7 +61,7 @@ class Email extends CApplicationComponent {
 	 * @var string Delivery type.  If set to 'php' it will use php's mail() function, and if set to 'debug'
 	 * it will not actually send it but output it to the screen
 	 */
-	public $delivery = 'php';
+	public $delivery=null; //defaulted in EmailModule to 'php'
 	
 	/**
 	 * @var string language to encode the message in (eg "Japanese", "ja", "English", "en" and "uni" (UTF-8))
@@ -97,6 +97,8 @@ class Email extends CApplicationComponent {
 	 */
 	public $lineLength = 70;
 	
+	protected $arg1 = null;
+	
 	public function __construct() {
 		Yii::setPathOfAlias('email', dirname(__FILE__).'/views');
 	}
@@ -106,7 +108,18 @@ class Email extends CApplicationComponent {
 	 * @param mixed the content of the email, or variables to be sent to the view.
 	 * If not set, it will use $this->message instead for the content of the email
 	 */
-	public function send($arg1=null) {
+	public function send($arg1=null, $queMysql=true) {
+		if ($this->arg1 != null)
+			$arg1 = $this->arg1;
+		else
+			$this->arg1 = $arg1;
+			
+		if ($this->delivery == null)
+			$this->delivery = Yii::app()->getModule('email')->delivery;
+		
+		if ($this->from == null)
+			$this->from = Yii::app()->getModule('email')->from;
+			
 		if ($this->view !== null) {
 			if ($arg1 == null)
 				$vars = $this->viewVars;
@@ -129,20 +142,39 @@ class Email extends CApplicationComponent {
 
 		//process 'to' attribute
 		$to = $this->processAddresses($this->to);
-		return $this->mail($to, $this->subject, $message);
+		if ($this->mail($to, $this->subject, $message)) {
+			return true;
+		} else {
+			if ($queMysql) {
+				$this->delivery = 'mysql';
+				$this->mail($to, $this->subject, $message);
+			}
+			return false;
+		}
+		
 	}
 	
 	private function mail($to, $subject, $message) {
 		switch ($this->delivery) {
 			case 'php':
+				//return false; //test a fail
 				$message = wordwrap($message, $this->lineLength);
 				mb_language($this->language);
 				return mb_send_mail($to, $subject, $message, implode("\r\n", $this->createHeaders()));
 			case 'debug':
 				$debug = Yii::app()->controller->renderPartial('email.debug',
-						array_merge(compact('to', 'subject', 'message'), array('headers'=>$this->createHeaders())),
-						true);
+					array_merge(compact('to', 'subject', 'message'), array('headers'=>$this->createHeaders())),
+					true
+				);
 				Yii::app()->user->setFlash('email', $debug);
+				return true;
+			case 'mysql':
+				$failedEmail = new FailedEmail;
+				$failedEmail->to = $to;
+				$failedEmail->subject = $subject;
+				//$failedEmail->message = $message;
+				$failedEmail->serialize = serialize($this);
+				$failedEmail->save();
 				break;
 		}
 	}

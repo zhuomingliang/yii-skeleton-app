@@ -37,7 +37,7 @@ echo Html::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 </div><!-- header -->
 
 <div id="content">
-<?php $this->widget('application.extensions.email.Debug'); ?>
+<?php $this->widget('email.components.Debug'); ?>
 <?php echo $content; ?>
 </div><!-- content -->
 
