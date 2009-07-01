@@ -132,15 +132,17 @@ class User extends ActiveRecord
 				Yii::app()->user->logout();
 				
 			//send email
-			$email = Yii::app()->email;
+			Yii::app()->getModule('email');
+			$email = new Email;
 			$email->to = $this->email;
 			$email->view = 'verifyEmail';
 			$email->send(array('user' => &$this));
 		}
 		
-		if ($this->sendNewPassword) {				
+		if ($this->sendNewPassword) {			
 			//send email
-			$email = Yii::app()->email;
+			Yii::app()->getModule('email');
+			$email = new Email;
 			$email->to = $this->email;
 			$email->view = 'changePassword';
 			$email->send(array('user' => &$this));

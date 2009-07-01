@@ -156,7 +156,8 @@ class UserController extends Controller {
 				$found = User::model()->findByAttributes(array('email'=>$user->email));
 				
 				if ($found !== null) {
-					$email = Yii::app()->email;
+					Yii::app()->getModule('email');
+					$email = new Email;
 					$email->to = $found->email;
 					$email->view = 'UserRecover';
 					$email->send(array('user' => $found, 'newPassword'=>false));
@@ -181,7 +182,8 @@ class UserController extends Controller {
 			$user->encryptPassword();
 			$user->save(false);
 			
-			$email = Yii::app()->email;
+			Yii::app()->getModule('email');
+			$email = new Email;
 			$email->to = $user->email;
 			$email->view = 'UserRecover';
 			$email->send(array('user' => $user, 'newPassword'=>true));
