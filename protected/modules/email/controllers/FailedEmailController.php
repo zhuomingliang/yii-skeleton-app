@@ -26,7 +26,7 @@ class FailedEmailController extends Controller
 	}
 	
 	public function actionSendFailedEmails() {
-		$emails = FailedEmail::model()->findAll();
+		$emails = Failedemail::model()->findAll();
 		foreach ($emails as $email) {
 			$emailComponent = unserialize($email->serialize);
 			$emailComponent->delivery = 'php';
@@ -71,14 +71,14 @@ class FailedEmailController extends Controller
 
 		$criteria=new CDbCriteria;
 
-		$pages=new CPagination(FailedEmail::model()->count($criteria));
+		$pages=new CPagination(Failedemail::model()->count($criteria));
 		$pages->pageSize=self::PAGE_SIZE;
 		$pages->applyLimit($criteria);
 
-		$sort=new CSort('FailedEmail');
+		$sort=new CSort('Failedemail');
 		$sort->applyOrder($criteria);
 
-		$models=FailedEmail::model()->findAll($criteria);
+		$models=Failedemail::model()->findAll($criteria);
 
 		$this->render('admin',array(
 			'models'=>$models,
@@ -97,7 +97,7 @@ class FailedEmailController extends Controller
 		if($this->_model===null)
 		{
 			if($id!==null || isset($_GET['id']))
-				$this->_model=FailedEmail::model()->findbyPk($id!==null ? $id : $_GET['id']);
+				$this->_model=Failedemail::model()->findbyPk($id!==null ? $id : $_GET['id']);
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
 		}

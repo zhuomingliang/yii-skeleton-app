@@ -100,7 +100,7 @@ class Email extends CApplicationComponent {
 	protected $arg1 = null;
 	
 	public function __construct() {
-		Yii::setPathOfAlias('email', dirname(__FILE__).'/views');
+		//Yii::setPathOfAlias('email', dirname(__FILE__).'/views'); //bad!!
 	}
 	
 	/**
@@ -162,14 +162,14 @@ class Email extends CApplicationComponent {
 				mb_language($this->language);
 				return mb_send_mail($to, $subject, $message, implode("\r\n", $this->createHeaders()));
 			case 'debug':
-				$debug = Yii::app()->controller->renderPartial('email.debug',
+				$debug = Yii::app()->controller->renderPartial('email.components.views.debug',
 					array_merge(compact('to', 'subject', 'message'), array('headers'=>$this->createHeaders())),
 					true
 				);
 				Yii::app()->user->setFlash('email', $debug);
 				return true;
 			case 'mysql':
-				$failedEmail = new FailedEmail;
+				$failedEmail = new Failedemail;
 				$failedEmail->to = $to;
 				$failedEmail->subject = $subject;
 				//$failedEmail->message = $message;
