@@ -1,6 +1,6 @@
 <?php
 class Time {
-	const LONG='D, M jS Y, H:i';
+	const LONG='D, M jS Y, g:i a';
 	const SHORT='F d, o';
 	/**
 	* Returns a nicely formatted date string for given Datetime string.
