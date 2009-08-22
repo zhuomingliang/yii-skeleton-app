@@ -3,21 +3,29 @@ class WebUser extends CWebUser {
 	public $email;
 	public $rank = 1;
 	
+	/**
+	* Holds an AR intance of the logged in user, or null otherwise
+	*/
+	public $data;
+	
 	public function init() {
 		parent::init();
 		
-		/*
-		* Sets the user email and rank
-		* The reason I use this method is so that I can access the user states as attributes (you can do that anyways as of Yii 1.0.3 though)
-		* and so that the user rank defaults to 1 (meaning not logged on)
-		* See the group model for information on the ranks
-		*/
-		$this->email = $this->getState('email');
-		$rank = $this->getState('rank');
-		if ($rank != null)
-			$this->rank = $rank;
+		if (($user = $this->getState('userModel')) !== null) {
+			$this->setUserData(unserialize($user));
+		}
 	}
-	
+	/*
+	* This sets the persistant data as well as setting the email and rank.
+	* The email is only set here for backward compatability
+	* The user rank defaults to 1 (meaning not logged on)
+	* See the group model for information on the ranks
+	*/
+	public function setUserData($user) {
+			$this->data = $user;
+			$this->email = $this->data->email; //old, needs to go
+			$this->rank = $this->data->group_id;
+	}
 	/**
 	* Compares the current user to $rank
 	*
@@ -72,5 +80,55 @@ class WebUser extends CWebUser {
 		else
 			echo $buff;
 	}
+
+
+	/**
+	 * Populates the current user object with the information obtained from cookie.
+	 * This method is used when automatic login ({@link allowAutoLogin}) is enabled.
+	 * The user identity information is recovered from cookie.
+	 * Sufficient security measures are used to prevent cookie data from being tampered.
+	 * @see saveToCookie
+	 */
+	protected function restoreFromCookie()
+	{
+		$app=Yii::app();
+		$cookie=$app->getRequest()->getCookies()->itemAt($this->getStateKeyPrefix());
+		if($cookie && !empty($cookie->value) && ($data=$app->getSecurityManager()->validateData($cookie->value))!==false)
+		{
+			$data=unserialize($data);
+			if(isset($data[0],$data[1])) {
+				list($id,$password)=$data;
+				$identity = new UserIdentity;
+				$identity->id = $id;
+				$identity->password = $password;
+				$identity->authenticate();
+				
+				if ($identity->errorCode == UserIdentity::ERROR_NONE)
+					$this->changeIdentity($identity->getId(),$identity->getName(),$identity->getPersistentStates());
+				else
+					throw new CHttpException(500,'Bad cookie information.');
+			}
+		}
+	}
+
+	/**
+	 * Saves necessary user data into a cookie.
+	 * This method is used when automatic login ({@link allowAutoLogin}) is enabled.
+	 * This method saves user ID and hashed password
+	 * These information are used to do authentication next time when user visits the application.
+	 * @param integer number of seconds that the user can remain in logged-in status. Defaults to 0, meaning login till the user closes the browser.
+	 * @see restoreFromCookie
+	 */
+	protected function saveToCookie($duration)
+	{
+		$app=Yii::app();
+		$cookie=$this->createIdentityCookie($this->getStateKeyPrefix());
+		$cookie->expire=time()+$duration;
+		$data=array(
+			$this->data->id,
+			$this->data->password,
+		);
+		$cookie->value=$app->getSecurityManager()->hashData(serialize($data));
+		$app->getRequest()->getCookies()->add($cookie->name,$cookie);
+	}
 }
-?>

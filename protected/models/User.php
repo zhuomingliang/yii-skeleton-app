@@ -75,12 +75,13 @@ class User extends ActiveRecord
 	public function authenticatePass($attribute,$params) {
 		
 		if (!$this->hasErrors()) { // we only want to authenticate when no input errors
-			$identity = new UserIdentity($this->username,$this->password);
+			$identity = new UserIdentity($this->username, md5($this->password));
 			$identity->authenticate();
 			
 			switch ($identity->errorCode) {
 				case UserIdentity::ERROR_NONE:
 					$duration = $this->rememberMe ? 3600*24*30 : 0; // 30 days
+					Yii::app()->user->setUserData($identity->user);
 					Yii::app()->user->login($identity, $duration);
 					break;
 					

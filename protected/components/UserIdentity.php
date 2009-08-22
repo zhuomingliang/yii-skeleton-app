@@ -8,35 +8,45 @@
 class UserIdentity extends CUserIdentity
 {
 	const ERROR_EMAIL_INVALID=3;
-	public $id;
+	public $user;
 
+	public $id;
+	
+	public function __construct($username=null,$password=null) {
+		$this->username=$username;
+		$this->password=$password;
+	}
 	
 	public function authenticate() {
-		$record=User::model()->findByAttributes(array('username'=>$this->username));
+		$criteria = new CDbCriteria;
+		if (isset($this->id)) {
+			$criteria->condition = 'id=:id';
+			$criteria->params['id'] = $this->id;
+		} else {
+			$criteria->condition = 'username=:username';
+			$criteria->params['username'] = $this->username;
+		}
+		$record = User::model()->find($criteria);
 		
 		if ($record === null) {
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
-		} elseif ($record->password !== md5($this->password)) {
+		} elseif ($record->password !== $this->password) {
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		} elseif ($record->email_confirmed != null) {
 			$this->errorCode = self::ERROR_EMAIL_INVALID;
 		} else {
-			$this->username = $record->username;
-			$this->id = $record->id;
-			
-			$this->setStates($record);
-			
+			$this->user = $record;
+			$this->setState('userModel', serialize($record));
 			$this->errorCode = self::ERROR_NONE;
 		}
 		return !$this->errorCode;
 	}
 	
 	public function getId(){
-		return $this->id;
+		return $this->user->id;
 	}
-
-	private function setStates($user) {
-		$this->setState('rank', $user->group_id);
-		$this->setState('email',$user->email);
+	
+	public function getName() {
+		return $this->user->username;
 	}
 }
