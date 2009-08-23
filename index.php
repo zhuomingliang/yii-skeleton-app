@@ -1,4 +1,5 @@
 <?php
+require_once('protected/globals.php');
 
 // change the following paths if necessary
 $yii = '../yiiRepo/framework/yii.php';
@@ -9,3 +10,4 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
+cs();

@@ -23,21 +23,29 @@ class TextEditor extends CWidget
 	public function init()
 	{
 		Yii::app()->getModule('textedit');
-		//Yii::import('textedit.models.*');
-		$model = ($this->AR == null) ? Textedit::model()->find("namedId='{$this->id}'") : $this->AR;
+		
+		if ($this->AR == null) {
+			$this->model = Textedit::model()->find('namedId=:id', array('id'=>$this->id));
+			if (!$this->model) {
+				$this->model = new Textedit;
+				$this->model->namedId = $this->id;
+			}
+		} else {
+			$this->model = $this->AR;
+		}
+		
 		if (!Yii::app()->user->hasAuth(Group::ADMIN)) {
-			if ($model)
-				echo $model->getMarkdown('content', false);
+			if ($this->model->content)
+				echo $this->model->getMarkdown('content', false);
 			return;	
 		}
 
 		$this->registerScript();
-		$id = ($model) ? $model->namedId : $this->id;
-		echo '<div class="texteditId">Id: '.$id.'</div>
-		<div class="textedit" id="textedit_'.$id.'">';
+		echo '<div class="texteditId">Id: '.$this->model->namedId.'</div>
+		<div class="textedit" id="textedit_'.$this->model->namedId.'">';
 		
-		if ($model)
-			echo $model->getMarkdown('content', false);
+		if ($this->model->content)
+			echo $this->model->getMarkdown('content', false);
 		else
 			echo '<p>'.$this->defaultMsg.'</p>';
 		
