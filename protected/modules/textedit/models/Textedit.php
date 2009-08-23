@@ -1,5 +1,5 @@
 <?php
-class TextEdit extends ActiveRecord
+class Textedit extends ActiveRecord
 {
 	public static function model($className=__CLASS__) {
 		return parent::model($className);

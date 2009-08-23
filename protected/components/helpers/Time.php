@@ -1,4 +1,7 @@
 <?php
+/**
+* Time helper is ported over from CakePHP.  Most of the credit goes to them for this class
+*/
 class Time {
 	const LONG='D, M jS Y, g:i a';
 	const SHORT='F d, o';
