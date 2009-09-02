@@ -38,6 +38,11 @@ echo Html::cssFile(Yii::app()->request->baseUrl.'/css/form.css');
 
 <div id="content">
 <?php $this->widget('email.components.Debug'); ?>
+<?php
+if ($this->operations!==array()) {
+	$this->widget('Menu',array('items'=>$this->operations));
+}
+?>
 <?php echo $content; ?>
 </div><!-- content -->
 

@@ -5,10 +5,10 @@ JavaScript::deleteItem();
 <h2>Managing Post</h2>
 
 <?php
-$items = array();
-$items[] = array('Post List',array('list'));
-$items[] = array('New Post',array('create'));
-$this->widget('Menu',array('items'=>$items));
+$this->operations = array(
+	array('Post List',array('list')),
+	array('New Post',array('create')),
+);
 ?>
 
 

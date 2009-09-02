@@ -13,10 +13,10 @@ JavaScript::deleteItem();
 <h2>Managing <?php echo $modelClass; ?></h2>
 
 <?php echo "<?php\n"; ?>
-$this->widget('Menu',array('items'=>array(
+$this->operations = array(
 	array('<?php echo $modelClass?> List', array('list')),
 	array('New <?php echo $modelClass?>', array('create')),
-)));
+);
 <?php echo "?>\n"; ?>
 
 <table class="dataGrid">

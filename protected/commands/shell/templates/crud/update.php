@@ -10,11 +10,11 @@
 <h2>Update <?php echo $modelClass." <?php echo \$model->{$ID}; ?>"; ?></h2>
 
 <?php echo "<?php\n"; ?>
-$this->widget('Menu',array('items'=>array(
+$this->operations = array(
 	array('<?php echo $modelClass?> List',array('list')),
 	array('New <?php echo $modelClass?>',array('create')),
 	array('Admin <?php echo $modelClass?>',array('admin')),
-)));
+);
 <?php echo "?>\n"; ?>
 
 <?php echo "<?php echo \$this->renderPartial('_form', array(

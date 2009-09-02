@@ -1,13 +1,11 @@
 <?php
 JavaScript::deleteItem();
 
-$items = array();
-$items[] = array('User List', array('list'));
+$this->operations[] = array('User List', array('list'));
 if (Yii::app()->user->hasAuth(Group::ADMIN)){
-	$items[] = array('Update User', array('update','id'=>$user->id));
-	$items[] = array('Delete User', array('delete','id'=>$user->id), 'htmlOptions'=>array('class' => 'deleteItem'));
+	$this->operations[] = array('Update User', array('update','id'=>$user->id));
+	$this->operations[] = array('Delete User', array('delete','id'=>$user->id), 'htmlOptions'=>array('class' => 'deleteItem'));
 }
-$this->widget('Menu',array('items'=>$items));
 
 $username = Html::encode($user->username); //cache the encoding
 ?>

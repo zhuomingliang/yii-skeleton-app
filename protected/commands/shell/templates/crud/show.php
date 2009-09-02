@@ -13,13 +13,13 @@ JavaScript::deleteItem();
 <h2>View <?php echo $modelClass." <?php echo \$model->{$ID}; ?>"; ?></h2>
 
 <?php echo "<?php\n"; ?>
-$this->widget('Menu',array('items'=>array(
+$this->operations = array(
 	array('<?php echo $modelClass?> List', array('list')),
 	array('New <?php echo $modelClass?>', array('create')),
 	array('Update <?php echo $modelClass?>', array('update','id'=>$model-><?php echo $ID?>)),
 	array('Delete <?php echo $modelClass?>', array('delete','id'=>$model-><?php echo $ID?>), 'htmlOptions'=>array('class' => 'deleteItem')),
 	array('Admin <?php echo $modelClass?>',array('admin')),
-)));
+);
 <?php echo "?>\n"; ?>
 
 <table class="dataGrid">

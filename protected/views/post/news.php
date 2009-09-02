@@ -2,10 +2,10 @@
 
 <?php
 if (Yii::app()->user->hasAuth(Group::ADMIN)){
-	$items = array();
-	$items[] = array('New Post',array('create'));
-	$items[] = array('Admin',array('admin'));
-	$this->widget('Menu',array('items'=>$items));
+	$this->operations = array(
+		array('New Post',array('create')),
+		array('Admin',array('admin')),
+	);
 }
 foreach($posts as $n=>$post) { ?>
 <div class="post">

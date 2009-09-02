@@ -10,10 +10,10 @@
 <h2>New <?php echo $modelClass; ?></h2>
 
 <?php echo "<?php\n"; ?>
-$this->widget('Menu',array('items'=>array(
+$this->operations = array(
 	array('<?php echo $modelClass?> List', array('list')),
 	array('Admin <?php echo $modelClass?>', array('admin')),
-)));
+);
 <?php echo "?>\n"; ?>
 
 <?php echo "<?php echo \$this->renderPartial('_form', array(

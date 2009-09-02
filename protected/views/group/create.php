@@ -1,9 +1,7 @@
 <h2>New Group</h2>
 
 <?php
-$items = array();
-$items[] = array('Group List',array('list'));
-$this->widget('Menu',array('items'=>$items));
+$this->operations = array(array('Group List',array('list')));
 ?>
 
 

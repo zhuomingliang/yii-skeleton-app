@@ -10,10 +10,10 @@
 <h2><?php echo $modelClass; ?> List</h2>
 
 <?php echo "<?php\n"; ?>
-$this->widget('Menu',array('items'=>array(
-	array('<?php echo $modelClass?> List', array('list')),
+$this->operations = array(
 	array('Admin <?php echo $modelClass?>', array('admin')),
-)));
+	array('Create <?php echo $modelClass?>', array('create')),
+);
 <?php echo "?>\n"; ?>
 
 <?php echo "<?php \$this->widget('CLinkPager',array('pages'=>\$pages)); ?>" ?>

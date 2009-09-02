@@ -46,7 +46,7 @@ return array(
 			'routes'=>array(
 				'web'=>array(
 					'class'=>'CWebLogRoute',
-					'levels'=>'trace, info, error, warning',
+					'levels'=>'trace, info, error, warning, application',
 					'categories'=>'system.db.*',
 					'showInFireBug'=>true //firebug only - turn off otherwise
 				),

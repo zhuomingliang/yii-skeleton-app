@@ -1,10 +1,10 @@
 <h2>Update Group <?php echo $group->id; ?></h2>
 
 <?php
-$items = array();
-$items[] = array('Group Listing',array('list'));
-$items[] = array('New Group',array('create'));
-$this->widget('Menu',array('items'=>$items));
+$this->operations  = array(
+	array('Group Listing',array('list')),
+	array('New Group',array('create'))
+);
 ?>
 <div class="yiiForm">
 <?php echo Html::form(); ?>

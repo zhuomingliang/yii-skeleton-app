@@ -2,12 +2,10 @@
 
 
 <?php
-$items = array();
-$items[] = array('New Post',array('create'));
+$this->operations[] = array('New Post',array('create'));
 if (Yii::app()->user->hasAuth(Group::ADMIN)){
-	$items[] = array('Admin',array('admin'));
+	$this->operations[] = array('Admin',array('admin'));
 }
-$this->widget('Menu',array('items'=>$items));
 
 $this->widget('CLinkPager',array('pages'=>$pages));
 ?>

@@ -1,17 +1,15 @@
 <?php
 JavaScript::deleteItem();
 
-$items = array();
-$items[] = array('Archive',array('list'));
-$items[] = array('New Post',array('create'));
+$this->operations[] = array('Archive',array('list'));
+$this->operations[] = array('New Post',array('create'));
 if (($post->user_id == Yii::app()->user->id) || Yii::app()->user->hasAuth(Group::ADMIN)) {
-	$items[] = array('Edit Post',array('update','id'=>$post->id));
-	$items[] = array('Delete Post',array('delete','id'=>$post->id), 'htmlOptions'=>array('class' => 'deleteItem'));
+	$this->operations[] = array('Edit Post',array('update','id'=>$post->id));
+	$this->operations[] = array('Delete Post',array('delete','id'=>$post->id), 'htmlOptions'=>array('class' => 'deleteItem'));
 }
 if (Yii::app()->user->hasAuth(Group::ADMIN))
-	$items[] = array('Admin',array('admin'));
+	$this->operations[] = array('Admin',array('admin'));
 
-$this->widget('Menu',array('items'=>$items));
 ?>
 
 <div class="post">

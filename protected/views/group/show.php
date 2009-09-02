@@ -3,11 +3,11 @@
 <?php
 JavaScript::deleteItem();
 
-$items = array();
-$items[] = array('Group Listing',array('list'));
-$items[] = array('Rename Group',array('update','id'=>$group->id));
-$items[] = array('Delete Group',array('delete','id'=>$group->id), 'htmlOptions'=>array('class' => 'deleteItem'));
-$this->widget('Menu',array('items'=>$items));
+$this->operations = array(
+	array('Group Listing',array('list')),
+	array('Rename Group',array('update','id'=>$group->id)),
+	array('Delete Group',array('delete','id'=>$group->id), 'htmlOptions'=>array('class' => 'deleteItem'))
+);
 ?>
 
 <table class="dataGrid">
