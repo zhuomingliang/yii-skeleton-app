@@ -28,6 +28,7 @@ class UserController extends Controller {
 
 	public function actionLogin() {
 		$user = new User;
+		$user->setIsNewRecord(false);
 		if (Yii::app()->request->isPostRequest) {
 			// collect user input data
 			$user->setScenario('login');
