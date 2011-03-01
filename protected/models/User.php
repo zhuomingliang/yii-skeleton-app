@@ -56,6 +56,9 @@ class User extends ActiveRecord
 			
 			array('group_id', 'exist', 'className'=>'Group', 'attributeName' => 'id', 'on' => 'updateAdmin'),			
 			array('group_id', 'numerical', 'integerOnly' => true),
+			
+			array('about, password_repeat','safe', 'on' => 'update, updateAdmin'),
+			array('username, rememberMe','safe', 'on' => 'login'),
 		);
 	}
 	
