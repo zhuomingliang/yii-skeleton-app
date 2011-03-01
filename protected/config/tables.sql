@@ -34,6 +34,7 @@ INSERT INTO `group` (`id`, `name`) VALUES
 -- Table structure for table `user`
 --
 
+
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email_visible` tinyint(1) NOT NULL DEFAULT '0',
   `notify_comments` tinyint(1) NOT NULL DEFAULT '1',
   `notify_messages` tinyint(1) NOT NULL DEFAULT '1',
-  `about` text NOT NULL,
+  `about` text DEFAULT NULL,
   `aboutParsed` text NOT NULL,
   `group_id` int(11) NOT NULL DEFAULT '2',
   `email_confirmed` char(21) DEFAULT NULL,
@@ -50,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `group_id` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `email_visible`, `notify_comments`, `notify_messages`, `about`, `group_id`, `email_confirmed`, `created`, `modified`) VALUES
 (1, 'Admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@example.com', 1, 1, 1, 'Hello everybody.  Admin test account.', 4, NULL, '2008-07-26 01:34:53', '2009-01-18 22:43:34');
@@ -74,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
 
 --
 -- Constraints for table `post`
@@ -97,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`,`post_id`),
   KEY `post_id` (`post_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 --
 -- Constraints for dumped tables
@@ -121,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `failedemail` (
   `serialize` text NOT NULL,
   `sent` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
  
 --
 -- Table structure for table `textedit`
@@ -132,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `textedit` (
   `content` text NOT NULL,
   `contentParsed` text NOT NULL,
   PRIMARY KEY (`namedId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 --
 -- Data for table `textedit` - REQUIRED
