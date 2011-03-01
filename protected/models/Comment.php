@@ -56,11 +56,11 @@ class Comment extends ActiveRecord
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
-	protected function beforeValidate($on) {
+	protected function beforeValidate() {
 		if ($this->isNewRecord)
 			$this->user_id = Yii::app()->user->id;
 			
-		return parent::beforeValidate($on);	
+		return parent::beforeValidate();	
 	}
 	/**
 	 * @return array customized attribute labels (name=>label)

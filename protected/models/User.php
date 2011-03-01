@@ -59,14 +59,6 @@ class User extends ActiveRecord
 		);
 	}
 	
-	public function safeAttributes() {
-		return array(
-			//parent::safeAttributes(),
-			'update'=>'about, password, password_repeat',
-			'updateAdmin'=>'about, password, password_repeat, group_id',
-			'login'=>'username, password, rememberMe',
-		);
-	}
 	
 	/**
 	 * Authenticates the password.

@@ -63,7 +63,7 @@ class UserController extends Controller {
 			'user.email_confirmed'=>'email_confirmed',
 		);
 
-		$sort->defaultOrder = '`user`.`created` DESC';
+		$sort->defaultOrder = '`t`.`created` DESC';
 		$sort->applyOrder($criteria);
 		//$criteria->select='COUNT(post.id) AS NumComments';
 		$users=User::model()->with('group', 'num_posts')->findAll($criteria);
@@ -80,11 +80,11 @@ class UserController extends Controller {
 		$user = $this->loadUser(isset($_GET['id']) ? $_GET['id'] : Yii::app()->user->id);
 			
 		$criteria=new CDbCriteria;
-		$criteria->condition = '`post`.`user_id`=\''.$user->id.'\'';
+		$criteria->condition = '`t`.`user_id`=\''.$user->id.'\'';
 		$pages=new CPagination(Post::model()->count($criteria));
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
-		$criteria->order = '`post`.`created` DESC';
+		$criteria->order = '`t`.`created` DESC';
 		$posts = Post::model()->findAll($criteria);
 			
 		$this->render('show', compact('user', 'pages', 'posts'));

@@ -121,7 +121,7 @@ class PostController extends Controller
 	public function actionList()
 	{
 		$criteria=new CDbCriteria;
-		$criteria->order = '`post`.`created` DESC';
+		$criteria->order = '`t`.`created` DESC';
 		
 		$pages=new CPagination(Post::model()->count($criteria));
 		$pages->pageSize=4;
@@ -138,7 +138,7 @@ class PostController extends Controller
 	{
 		$criteria=new CDbCriteria;
 		$criteria->condition = '`group_id` IN ('.Group::ADMIN.','.Group::SITE_ADMIN.')';
-		$criteria->order = '`post`.`created` DESC';
+		$criteria->order = '`t`.`created` DESC';
 		$pages=new CPagination(Post::model()->with('user')->count($criteria));
 		$pages->pageSize=4;
 		$pages->applyLimit($criteria);
@@ -160,7 +160,7 @@ class PostController extends Controller
 		$pages->applyLimit($criteria);
 
 		$sort=new CSort('Post');
-		$sort->defaultOrder = '`post`.`created` DESC';
+		$sort->defaultOrder = '`t`.`created` DESC';
 		$sort->applyOrder($criteria);
 		$postList=Post::model()->findAll($criteria);
 

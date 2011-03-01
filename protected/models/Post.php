@@ -29,11 +29,11 @@ class Post extends ActiveRecord
 		);
 	}
 	
-	protected function beforeValidate($on) {
+	protected function beforeValidate() {
 		if ($this->isNewRecord)
 			$this->user_id = Yii::app()->user->id;
 			
-		return parent::beforeValidate($on);	
+		return parent::beforeValidate();	
 	}
 	
 	/**
@@ -46,14 +46,7 @@ class Post extends ActiveRecord
 			'comments' => array(self::HAS_MANY, 'Comment', 'post_id', 'with'=>'user'),
 		);
 	}
-	public function safeAttributes() {
-		/**
-		* ActiveRecord is extended to know that 'required' attributes are 'safe'.
-		* We return a empty array so that it won't think 'created' and 'modified' are 'safe'.
-		* It will still know 'title' and 'content' are safe because they are 'required'
-		*/
-		return array(); 
-	}
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
