@@ -25,7 +25,8 @@ If you do not like my extension of access control, you can edit the
 Controller.php file and comment out the filterAccessControl() method
 */
 class AccessControlFilter extends CAccessControlFilter
-{	
+{
+        
 	private $_rules=array();
 	
 	public function getRules()
@@ -57,6 +58,12 @@ class AccessControlFilter extends CAccessControlFilter
 }
 class AccessRule extends CComponent
 {
+	/**
+	* @var string the error message to be displayed when authorization is denied by this rule.
+	* If not set, a default error message will be displayed.
+	* @since 1.1.1
+	*/
+	public $message;
 	
 	/**
 	 * @var array actions that this rule applies to. The comparison is case-insensitive.
