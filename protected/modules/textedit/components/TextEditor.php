@@ -61,8 +61,8 @@ class TextEditor extends CWidget
 		$script = <<<EOD
 		$('.textedit').editable('$controllerProcess', {
 			loadurl: '$controllerLoadRaw',
-			loaddata: {id: $(this).attr('id')},
-			submitdata: {id: $(this).attr('id')},
+			loaddata: {id: this.id},
+			submitdata: {id: this.id},
 			onblur: 'ignore',
 			submit: 'OK',
 			type: 'textarea',
